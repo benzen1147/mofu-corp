@@ -18,14 +18,8 @@
         }
 
         .greeting-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: flex-start;
-        }
-
-        .greeting-image-wrapper {
-            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .greeting-content {
@@ -71,12 +65,27 @@
             letter-spacing: 0.15em;
         }
 
-        @media (max-width: 768px) {
-            .greeting-wrap {
-                grid-template-columns: 1fr;
-                gap: var(--space-lg);
-            }
+        .dogs-figure {
+            margin: var(--space-lg) 0;
+            text-align: center;
+        }
 
+        .dogs-figure img {
+            width: 100%;
+            max-width: 560px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            display: inline-block;
+        }
+
+        .dogs-figure figcaption {
+            margin-top: 12px;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 768px) {
             .greeting-title {
                 font-size: 1.4rem;
                 white-space: normal;
@@ -101,33 +110,40 @@
         <section class="greeting-section">
             <div class="container fade-in">
                 <div class="greeting-wrap">
-                    <div class="greeting-image-wrapper">
-                        <img src="/images/representative.jpg"
-                            alt="合同会社mofu 代表社員 梶原萌花"
-                            style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); object-fit: cover; aspect-ratio: 4/5;">
-                    </div>
-
                     <div class="greeting-content">
                         <h2 class="greeting-title">もっと身近で、やさしいITを届けたい。</h2>
 
                         <p class="greeting-text">
                             「ITやAIは難しくて、冷たい印象がある」<br>
-                            これまで多くのお客様とお話をする中で、そんな声を聞くことが少なくありませんでした。
+                            これまで多くのお客様とお話をする中で、そんな声を聞くことが少なくありませんでした。確かに、画面の向こうのシステムや数字の羅列は、時として人を置いてけぼりにしてしまうことがあります。
                         </p>
 
                         <p class="greeting-text">
-                            一方で、IT技術や最新のAIは、正しく使えば人の負担を減らし、もっと自分らしく温かい時間の使い方を可能にしてくれる「やさしい道具」でもあります。<br>
-                            合同会社mofuは、そんなテクノロジーの力をもっと身近に、まるで「もふもふ」とした温かさで包み込むようにお客様のビジネスへお届けしたい、という想いから生まれました。
+                            私には、ビション・フリーゼという真っ白でモフモフの小さなワンコが2頭います。<br>
+                            仕事がうまくいかない日も、気持ちが折れそうな夜も、その子たちはいつも変わらず、ふわふわの毛並みをそっと寄せてきてくれます。言葉はありません。ただ、温かくて、やわらかくて、確かなぬくもり——それだけで、どんなに張り詰めていた心もほぐれて、「また明日、やってみよう」という気持ちが自然と湧いてくるのです。
+                        </p>
+
+                        <figure class="dogs-figure">
+                            <img src="/images/dogs.png" alt="代表の2頭のビション・フリーゼ">
+                            <figcaption>いつも傍らで支えてくれる2頭のビション・フリーゼ</figcaption>
+                        </figure>
+
+                        <p class="greeting-text">
+                            その子たちに何度も救われながら、ふと気づいたことがあります。<br>
+                            人が本当に必要としているのは、高機能なシステムだけではないのかもしれない、と。うまくいかない時に、不安な時に、「ここに相談して良かった」と思えるような、温かくて安心できる存在。そういうサポートこそが、人の背中をそっと押す力を持っているのだと。
                         </p>
 
                         <p class="greeting-text">
-                            最先端の技術をただ提供するのではなく、「お客様にとって本当に必要なものは何か」に深く寄り添い、丁寧にご提案すること。<br>
-                            どんな些細な疑問でも気軽に相談できる、心強いパートナーであり続けること。
+                            合同会社mofuは、そんな想いから生まれました。社名の「mofu」は、あの子たちの、あのもふもふとした毛並みそのものです。最新のテクノロジーを、まるでワンコのぬくもりのように身近で温かい形でお届けする——その願いを、そのまま社名に込めました。
                         </p>
 
                         <p class="greeting-text">
-                            女性ならではのきめ細やかな視点と温かいコミュニケーションを大切にしながら、信頼できるWebサイト作りやAI活用支援を通じて、お客様のビジネスの確かな成長を共に歩んで参ります。<br>
-                            これからの合同会社mofuに、どうぞご期待ください。
+                            最先端の技術をただ提供するのではなく、「お客様にとって本当に必要なものは何か」に深く寄り添い、丁寧にご提案すること。どんな些細な疑問でも気軽に相談していただける、心強いパートナーであり続けること。
+                        </p>
+
+                        <p class="greeting-text">
+                            あの2頭が、何も語らずとも私を助けてくれたように。mofuも、お客様の傍らに寄り添い、温かく、確かな力になれると信じています。<br>
+                            女性ならではのきめ細やかな視点と温かいコミュニケーションを大切にしながら、信頼できるWebサイト作りやAI活用支援を通じて、お客様のビジネスの確かな成長を共に歩んで参ります。これからの合同会社mofuを、どうぞよろしくお願いいたします。
                         </p>
 
                         <div class="greeting-signature">

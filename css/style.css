@@ -132,39 +132,6 @@ ol {
   background-color: var(--color-bg-white);
 }
 
-.section-dark {
-  background: linear-gradient(160deg, #1E0C04 0%, #3D1A0A 100%);
-}
-
-.section-dark .h2 {
-  color: #FFFFFF;
-}
-
-.section-dark .h2::after {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.section-dark .text-muted {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.section-dark .service-icon {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
-}
-
-.section-dark .btn-outline {
-  border-color: rgba(255, 255, 255, 0.6);
-  color: #FFFFFF !important;
-}
-
-.section-dark .btn-outline:hover,
-.section-dark .btn-outline:focus-visible {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.9);
-  opacity: 1;
-}
-
 /* Typography Classes */
 h1,
 h2,
@@ -386,29 +353,6 @@ p:last-child {
   box-shadow: var(--shadow-md);
 }
 
-.card-glass {
-  background: rgba(255, 255, 255, 0.06) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: none;
-}
-
-.card-glass .h3 {
-  color: #FFFFFF;
-}
-
-.card-glass p {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.card-glass:hover,
-.card-glass:focus-within {
-  background: rgba(255, 255, 255, 0.10) !important;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  transform: translateY(-4px);
-}
-
 /* Page Header (for all subpages) */
 .page-header {
   padding-top: calc(var(--header-height) + var(--space-xl));
@@ -464,7 +408,7 @@ p:last-child {
 
 .nav-links {
   display: flex;
-  gap: var(--space-lg);
+  gap: 20px;
   align-items: center;
   white-space: nowrap;
 }
@@ -527,7 +471,7 @@ p:last-child {
 
 /* Common CTA Section (for end of pages) */
 .global-cta {
-  background: linear-gradient(135deg, #E8834A 0%, #2A1208 100%);
+  background-color: var(--color-primary);
   color: var(--color-bg-white);
   text-align: center;
   padding: var(--space-lg) 0;

@@ -19,7 +19,7 @@ class CommonHeader extends HTMLElement {
             <a href="/business.html">事業内容</a>
             <a href="/pricing.html">料金プラン</a>
             <a href="/company.html">会社概要</a>
-            <a href="/team.html">運営体制</a>
+            <a href="/greeting.html">代表挨拶</a>
             <a href="/achievements.html">実績</a>
             <a href="/blog/index.html">ブログ</a>
             <a href="/contact.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">お問い合わせ</a>

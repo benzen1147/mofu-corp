@@ -10,23 +10,72 @@
     <meta name="description" content="合同会社mofuの料金プラン。Webサイト制作・Webマーケティング・システム開発・AI活用支援の目安料金をご確認いただけます。">
     <link rel="stylesheet" href="/css/style.css">
     <style>
-        section.section {
-            padding: 8px 0 var(--space-2xl);
-        }
-
         .page-header {
             padding-bottom: 8px;
         }
 
+        section.section {
+            padding: var(--space-xl) 0;
+        }
+
+        /* ── 全プラン共通の約束 ── */
+        .common-promise {
+            background: var(--color-primary-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg) var(--space-xl);
+            margin-bottom: var(--space-xl);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+            text-align: center;
+        }
+
+        .promise-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .promise-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .promise-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .promise-item p {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ── 注記 ── */
         .pricing-note {
             text-align: center;
             max-width: 640px;
-            margin: 0 auto var(--space-md);
+            margin: 0 auto var(--space-xl);
             color: var(--color-text-muted);
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             line-height: 1.8;
+            padding: var(--space-md) var(--space-lg);
+            border: 1px dashed var(--color-border);
+            border-radius: var(--radius-md);
         }
 
+        /* ── サービスセクション ── */
         .pricing-service {
             margin-bottom: var(--space-2xl);
         }
@@ -35,46 +84,97 @@
             margin-bottom: 0;
         }
 
-        .pricing-service-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--color-primary-dark);
-            margin-bottom: var(--space-md);
-            padding-bottom: 10px;
+        .pricing-service-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            padding-bottom: var(--space-md);
             border-bottom: 2px solid var(--color-primary-light);
         }
 
+        .service-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 0.12em;
+            background: var(--color-primary-light);
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+        }
+
+        .pricing-service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin: 0;
+        }
+
+        .pricing-service-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.9;
+            margin-bottom: var(--space-lg);
+            max-width: 700px;
+        }
+
+        /* ── カードグリッド ── */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md);
         }
 
+        /* ── カード ── */
         .pricing-card {
             background-color: var(--color-bg-white);
             border-radius: var(--radius-lg);
-            padding: var(--space-md);
-            border: 1px solid var(--color-border);
+            border: 1.5px solid var(--color-border);
             box-shadow: var(--shadow-sm);
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
         .pricing-card.featured {
             border-color: var(--color-primary);
-            box-shadow: 0 4px 20px rgba(221, 106, 40, 0.15);
+            box-shadow: 0 4px 24px rgba(221, 106, 40, 0.15);
+        }
+
+        .pricing-card.ai-featured {
+            border-color: #3A9E9A;
+            box-shadow: 0 4px 20px rgba(58, 158, 154, 0.15);
+        }
+
+        /* カード上部 */
+        .card-top {
+            padding: var(--space-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .pricing-card.featured .card-top {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, #fff 100%);
+        }
+
+        .pricing-card.ai-featured .card-top {
+            background: linear-gradient(135deg, var(--color-accent-ai) 0%, #fff 100%);
         }
 
         .pricing-tier {
             display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 4px 12px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 14px;
             border-radius: var(--radius-full);
             background-color: var(--color-primary-light);
             color: var(--color-primary-dark);
             margin-bottom: 12px;
-            align-self: flex-start;
         }
 
         .pricing-card.featured .pricing-tier {
@@ -82,103 +182,208 @@
             color: #fff;
         }
 
-        .pricing-price {
-            font-size: 1.6rem;
+        .ai-tier {
+            background-color: #3A9E9A !important;
+            color: #fff !important;
+        }
+
+        .pricing-plan-name {
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--color-text-main);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
+            line-height: 1.4;
         }
 
-        .pricing-price::after {
-            content: '（税別）';
-            font-size: 0.75rem;
-            font-weight: 400;
-            color: var(--color-text-muted);
-            margin-left: 4px;
-        }
-
-        .pricing-price-sub {
+        .pricing-for {
             font-size: 0.85rem;
             color: var(--color-text-muted);
-            margin-bottom: var(--space-sm);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* カード中部：特典リスト */
+        .card-body {
+            padding: var(--space-md);
+            flex-grow: 1;
         }
 
         .pricing-features {
             list-style: none;
             padding: 0;
-            margin: var(--space-sm) 0 0;
-            flex-grow: 1;
+            margin: 0;
         }
 
         .pricing-features li {
             font-size: 0.9rem;
             color: var(--color-text-main);
-            padding: 7px 0;
+            padding: 9px 0;
             border-bottom: 1px solid var(--color-border);
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            line-height: 1.5;
+            gap: 10px;
+            line-height: 1.55;
         }
 
         .pricing-features li:last-child {
             border-bottom: none;
         }
 
-        .pricing-features li::before {
-            content: '✓';
-            color: var(--color-primary);
-            font-size: 0.8rem;
-            flex-shrink: 0;
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-top: 2px;
-            font-weight: 700;
         }
 
-        .pricing-option {
-            margin-top: var(--space-sm);
-            font-size: 0.9rem;
+        .check-icon svg {
+            width: 10px;
+            height: 10px;
+            color: #fff;
+        }
+
+        .check-icon.ai {
+            background: #3A9E9A;
+        }
+
+        /* カード下部：価格 + CTA */
+        .card-foot {
+            padding: var(--space-md);
+            border-top: 1px solid var(--color-border);
+            background: var(--color-secondary);
+        }
+
+        .pricing-price-wrap {
+            margin-bottom: 14px;
+        }
+
+        .pricing-label {
+            font-size: 0.75rem;
             color: var(--color-text-muted);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .pricing-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            line-height: 1.2;
+        }
+
+        .pricing-price.ai-price {
+            color: #3A9E9A;
+        }
+
+        .pricing-price-tax {
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+            margin-left: 4px;
+        }
+
+        .pricing-price-sub {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin-top: 4px;
+        }
+
+        .card-cta {
+            display: block;
+            text-align: center;
+            padding: 11px 0;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark) !important;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1.5px solid var(--color-primary);
+        }
+
+        .card-cta:hover {
+            background-color: var(--color-primary);
+            color: #fff !important;
+            opacity: 1;
+            transform: none;
+        }
+
+        .card-cta.ai-cta {
+            border-color: #3A9E9A;
+            color: #3A9E9A !important;
+            background-color: var(--color-accent-ai);
+        }
+
+        .card-cta.ai-cta:hover {
+            background-color: #3A9E9A;
+            color: #fff !important;
+        }
+
+        /* オプション注記 */
+        .pricing-option {
+            margin-top: var(--space-md);
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            background: var(--color-primary-light);
+            border-radius: var(--radius-md);
+            padding: 12px 20px;
+            display: inline-block;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .common-promise {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
+            .common-promise {
+                padding: var(--space-md);
+                gap: var(--space-sm);
+            }
+
+            .pricing-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                gap: 10px;
+                padding: 4px 4px 16px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .pricing-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .pricing-grid .pricing-card {
+                min-width: calc(100vw - 80px);
+                scroll-snap-align: center;
+                flex-shrink: 0;
+            }
+
+            .pricing-plan-name {
+                font-size: 1rem;
+            }
+
             .pricing-price {
-                font-size: 0.9rem;
-            }
-
-            .pricing-price::after {
-                font-size: 0.62rem;
-                margin-left: 2px;
-            }
-
-            .pricing-price-sub {
-                font-size: 0.6rem;
-                margin-bottom: 6px;
-            }
-
-            .pricing-features {
-                margin-top: 6px;
-            }
-
-            .pricing-features li {
-                font-size: 0.62rem;
-                padding: 4px 0;
-                gap: 4px;
-            }
-
-            .pricing-features li::before {
-                font-size: 0.62rem;
-                margin-top: 1px;
-            }
-
-            .pricing-tier {
-                font-size: 0.7rem;
-            }
-
-            .pricing-option {
-                font-size: 0.65rem;
+                font-size: 1.3rem;
             }
         }
 
+        @media (max-width: 480px) {
+            .common-promise {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 
@@ -198,161 +403,508 @@
         <section class="section">
             <div class="container fade-in">
 
+                <!-- 全プラン共通の約束 -->
+                <div class="common-promise">
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <p>初回ご相談<br>無料</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <p>丁寧な<br>ヒアリング</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <p>スケジュール<br>厳守</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <p>納品後も<br>安心サポート</p>
+                    </div>
+                </div>
+
+                <!-- 注記 -->
                 <p class="pricing-note">
-                    以下はご参考価格です。規模・要件・納期により変動いたします。詳細なお見積りはお気軽にお問い合わせください。
+                    以下はご参考価格です。規模・要件・納期により変動いたします。<br>
+                    詳細なお見積りはお気軽にご相談ください。<strong>初回相談は無料</strong>です。
                 </p>
 
-                <!-- 01. Web制作 -->
+                <!-- ────────────────────────────────
+                     01. Webサイト制作・運用
+                ──────────────────────────────── -->
                 <div class="pricing-service">
-                    <h3 class="pricing-service-title">01. Webサイト制作・運用</h3>
-                    <div class="pricing-grid">
-                        <div class="pricing-card">
-                            <span class="pricing-tier">ライト</span>
-                            <div class="pricing-price">150,000円〜</div>
-                            <div class="pricing-price-sub">LP・5ページ以内の小規模サイト</div>
-                            <ul class="pricing-features">
-                                <li>ランディングページ・小規模サイト</li>
-                                <li>スマートフォン対応</li>
-                                <li>SEO基本設定</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-card featured">
-                            <span class="pricing-tier">スタンダード</span>
-                            <div class="pricing-price">350,000円〜</div>
-                            <div class="pricing-price-sub">コーポレートサイト（10〜15ページ）</div>
-                            <ul class="pricing-features">
-                                <li>コーポレートサイト・採用サイト</li>
-                                <li>CMS（WordPress等）導入</li>
-                                <li>SEO対策・アクセス解析設定</li>
-                                <li>公開後1ヶ月サポート付き</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-card">
-                            <span class="pricing-tier">プレミアム</span>
-                            <div class="pricing-price">700,000円〜</div>
-                            <div class="pricing-price-sub">大規模・複合サイト</div>
-                            <ul class="pricing-features">
-                                <li>採用+コーポレート等の複合サイト</li>
-                                <li>フルカスタムデザイン</li>
-                                <li>SEO・解析・広告連携</li>
-                                <li>公開後3ヶ月保守サポート付き</li>
-                            </ul>
-                        </div>
+                    <div class="pricing-service-header">
+                        <span class="service-number">01</span>
+                        <h2 class="pricing-service-title">Webサイト制作・運用</h2>
                     </div>
-                    <p class="pricing-option">※ 保守・更新サポート：月額 15,000円〜<small style="color:var(--color-text-muted);">（税別）</small></p>
+                    <p class="pricing-service-desc">
+                        「サイトはあるけど問い合わせが来ない」「デザインが古くて恥ずかしい」そんな悩みにお応えします。
+                        デザインだけでなく、集客・信頼構築・採用まで、目的に合った設計でビジネスを加速します。
+                    </p>
+                    <div class="pricing-grid">
+
+                        <!-- ライト -->
+                        <div class="pricing-card">
+                            <div class="card-top">
+                                <span class="pricing-tier">ライト</span>
+                                <div class="pricing-plan-name">まずWebに存在する</div>
+                                <p class="pricing-for">「費用を抑えてシンプルに自社サイトを持ちたい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        LP・5ページ以内の小規模サイト制作
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        スマートフォン対応・表示速度の最適化
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        SEO基本設定（タイトル・メタ情報など）
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        公開後2週間のサポート期間
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">制作費（目安）</div>
+                                    <div class="pricing-price">150,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                        <!-- スタンダード -->
+                        <div class="pricing-card featured">
+                            <div class="card-top">
+                                <span class="pricing-tier">スタンダード</span>
+                                <div class="pricing-plan-name">会社の顔をつくる</div>
+                                <p class="pricing-for">「営業・採用の武器になるコーポレートサイトが欲しい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        コーポレートサイト・採用サイト（10〜15ページ）
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        CMS（WordPress等）導入で自社での更新が可能に
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        SEO対策・Googleアナリティクス設定
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        公開後1ヶ月の修正・質問サポート付き
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">制作費（目安）</div>
+                                    <div class="pricing-price">350,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                        <!-- プレミアム -->
+                        <div class="pricing-card">
+                            <div class="card-top">
+                                <span class="pricing-tier">プレミアム</span>
+                                <div class="pricing-plan-name">多目的に成果を出す</div>
+                                <p class="pricing-for">「採用・広告・ブランドなど複数の目的を一つのサイトで実現したい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        採用＋コーポレートなどの複合サイト設計
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        フルカスタムデザイン（ブランド統一）
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        SEO・アクセス解析・Web広告との連携設定
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        公開後3ヶ月の保守・改善サポート付き
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">制作費（目安）</div>
+                                    <div class="pricing-price">700,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="pricing-option">＋ 保守・更新サポート：月額 15,000円〜（税別）</p>
                 </div>
 
-                <!-- 02. マーケティング -->
+                <!-- ────────────────────────────────
+                     02. Webマーケティング支援
+                ──────────────────────────────── -->
                 <div class="pricing-service">
-                    <h3 class="pricing-service-title">02. Webマーケティング支援</h3>
+                    <div class="pricing-service-header">
+                        <span class="service-number">02</span>
+                        <h2 class="pricing-service-title">Webマーケティング支援</h2>
+                    </div>
+                    <p class="pricing-service-desc">
+                        「サイトはあるのにアクセスが増えない」「広告を出しているが費用対効果が見えない」という悩みにお応えします。
+                        検索・広告・SNSを組み合わせ、データに基づいた施策でお客様を呼び込む仕組みをつくります。
+                    </p>
                     <div class="pricing-grid">
+
+                        <!-- スポット -->
                         <div class="pricing-card">
-                            <span class="pricing-tier">スポット</span>
-                            <div class="pricing-price">50,000円〜</div>
-                            <div class="pricing-price-sub">単発コンサルティング</div>
-                            <ul class="pricing-features">
-                                <li>現状分析・課題整理</li>
-                                <li>改善提案レポート</li>
-                                <li>1ヶ月チャットサポート</li>
-                            </ul>
+                            <div class="card-top">
+                                <span class="pricing-tier">スポット</span>
+                                <div class="pricing-plan-name">まず現状を正しく知る</div>
+                                <p class="pricing-for">「何が問題かわからない」「まずプロの意見を聞いてみたい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        Webサイト・広告の現状分析と課題整理
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        優先度付きの具体的な改善提案レポート
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        1ヶ月間のチャットサポート付き
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">費用（目安）</div>
+                                    <div class="pricing-price">50,000円〜<span class="pricing-price-tax">税別</span></div>
+                                    <div class="pricing-price-sub">単発コンサルティング</div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
                         </div>
+
+                        <!-- 広告運用 -->
                         <div class="pricing-card featured">
-                            <span class="pricing-tier">広告運用</span>
-                            <div class="pricing-price">月額 50,000円〜</div>
-                            <div class="pricing-price-sub">+ 広告費実費</div>
-                            <ul class="pricing-features">
-                                <li>Google / Meta広告の設定・運用</li>
-                                <li>ターゲティング最適化</li>
-                                <li>月次レポート・改善提案</li>
-                            </ul>
+                            <div class="card-top">
+                                <span class="pricing-tier">広告運用</span>
+                                <div class="pricing-plan-name">集客を仕組み化する</div>
+                                <p class="pricing-for">「Webから安定的に見込み客を獲得したい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        Google / Meta広告の設計・設定・継続運用
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        ターゲティング・クリエイティブの継続最適化
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        月次レポートと改善提案（PDCAサイクル）
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">運用管理費（目安）</div>
+                                    <div class="pricing-price">月額 50,000円〜<span class="pricing-price-tax">税別</span></div>
+                                    <div class="pricing-price-sub">＋ 広告費実費</div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
                         </div>
+
+                        <!-- 総合支援 -->
                         <div class="pricing-card">
-                            <span class="pricing-tier">総合支援</span>
-                            <div class="pricing-price">月額 100,000円〜</div>
-                            <div class="pricing-price-sub">+ 広告費実費</div>
-                            <ul class="pricing-features">
-                                <li>広告運用 + SEO + SNS対策</li>
-                                <li>コンテンツ企画・ライティング</li>
-                                <li>月次MTG・戦略立案</li>
-                            </ul>
+                            <div class="card-top">
+                                <span class="pricing-tier">総合支援</span>
+                                <div class="pricing-plan-name">全方位でWeb戦略を進める</div>
+                                <p class="pricing-for">「広告・SEO・SNSをまとめてお任せしたい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        広告運用 ＋ SEO対策 ＋ SNS施策を一元管理
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        コンテンツ企画・ライティング支援
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        月次MTGで戦略を定期的に見直し・改善
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">運用管理費（目安）</div>
+                                    <div class="pricing-price">月額 100,000円〜<span class="pricing-price-tax">税別</span></div>
+                                    <div class="pricing-price-sub">＋ 広告費実費</div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
-                <!-- 03. システム開発 -->
+                <!-- ────────────────────────────────
+                     03. Webシステム・業務効率化開発
+                ──────────────────────────────── -->
                 <div class="pricing-service">
-                    <h3 class="pricing-service-title">03. Webシステム・業務支援開発</h3>
-                    <div class="pricing-grid">
-                        <div class="pricing-card">
-                            <span class="pricing-tier">スモールスタート</span>
-                            <div class="pricing-price">300,000円〜</div>
-                            <div class="pricing-price-sub">単機能の業務ツール</div>
-                            <ul class="pricing-features">
-                                <li>顧客管理・予約管理など単機能</li>
-                                <li>要件定義・設計含む</li>
-                                <li>ノーコードツール活用</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-card featured">
-                            <span class="pricing-tier">スタンダード</span>
-                            <div class="pricing-price">800,000円〜</div>
-                            <div class="pricing-price-sub">複数機能の業務システム</div>
-                            <ul class="pricing-features">
-                                <li>複数機能を統合した業務システム</li>
-                                <li>クラウド環境構築含む</li>
-                                <li>公開後3ヶ月保守付き</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-card">
-                            <span class="pricing-tier">カスタム開発</span>
-                            <div class="pricing-price">1,500,000円〜</div>
-                            <div class="pricing-price-sub">大規模・複合システム</div>
-                            <ul class="pricing-features">
-                                <li>大規模・複合システム開発</li>
-                                <li>API連携・既存システム連携</li>
-                                <li>継続保守サポート付き</li>
-                            </ul>
-                        </div>
+                    <div class="pricing-service-header">
+                        <span class="service-number">03</span>
+                        <h2 class="pricing-service-title">Webシステム・業務効率化開発</h2>
                     </div>
-                    <p class="pricing-option">※ 保守・運用サポート：月額 30,000円〜<small style="color:var(--color-text-muted);">（税別）</small></p>
+                    <p class="pricing-service-desc">
+                        「エクセル管理に限界を感じている」「手作業が多くてミスが減らない」「属人化した業務で引き継ぎができない」。
+                        そんな業務の悩みを、自社専用のWebシステムで根本から解決します。
+                    </p>
+                    <div class="pricing-grid">
+
+                        <!-- スモールスタート -->
+                        <div class="pricing-card">
+                            <div class="card-top">
+                                <span class="pricing-tier">スモールスタート</span>
+                                <div class="pricing-plan-name">一番の悩みだけを解消する</div>
+                                <p class="pricing-for">「まず一つの業務だけデジタル化してみたい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        顧客管理・予約管理などの単機能ツール
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        要件定義・設計・開発まで一貫対応
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        ノーコードツール活用でコストを抑えた実装
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">開発費（目安）</div>
+                                    <div class="pricing-price">300,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                        <!-- スタンダード -->
+                        <div class="pricing-card featured">
+                            <div class="card-top">
+                                <span class="pricing-tier">スタンダード</span>
+                                <div class="pricing-plan-name">業務全体を効率化する</div>
+                                <p class="pricing-for">「複数の業務をまとめて一つのシステムで管理したい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        複数機能を統合した業務管理システム
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        クラウド環境の構築・セキュリティ設定含む
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        公開後3ヶ月の保守・改善サポート付き
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">開発費（目安）</div>
+                                    <div class="pricing-price">800,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                        <!-- カスタム開発 -->
+                        <div class="pricing-card">
+                            <div class="card-top">
+                                <span class="pricing-tier">カスタム開発</span>
+                                <div class="pricing-plan-name">独自の仕組みをつくる</div>
+                                <p class="pricing-for">「既存システムとの連携や大規模な開発が必要」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        大規模・複合システムのフルスクラッチ開発
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        外部API・既存システムとの連携対応
+                                    </li>
+                                    <li>
+                                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        継続的な保守・運用サポート（長期契約可）
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">開発費（目安）</div>
+                                    <div class="pricing-price">1,500,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="pricing-option">＋ 保守・運用サポート：月額 30,000円〜（税別）</p>
                 </div>
 
-                <!-- 04. AI -->
+                <!-- ────────────────────────────────
+                     04. AI活用支援・業務効率化
+                ──────────────────────────────── -->
                 <div class="pricing-service">
-                    <h3 class="pricing-service-title" style="border-color: var(--color-accent-ai-dark);">04. AI活用支援・業務効率化</h3>
-                    <div class="pricing-grid">
-                        <div class="pricing-card">
-                            <span class="pricing-tier" style="background-color: var(--color-accent-ai); color: var(--color-text-main);">基礎研修</span>
-                            <div class="pricing-price">100,000円〜</div>
-                            <div class="pricing-price-sub">AI導入の第一歩</div>
-                            <ul class="pricing-features">
-                                <li>AI導入ガイドライン策定</li>
-                                <li>ハンズオン研修（半日）</li>
-                                <li>プロンプト作成サポート</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-card" style="border-color: #3A9E9A; box-shadow: 0 4px 20px rgba(58,158,154,0.15);">
-                            <span class="pricing-tier" style="background-color: #3A9E9A; color: #fff;">環境構築</span>
-                            <div class="pricing-price">200,000円〜</div>
-                            <div class="pricing-price-sub">セキュアなAI環境の整備</div>
-                            <ul class="pricing-features">
-                                <li>社内専用AI環境の構築</li>
-                                <li>情報漏洩対策・ルール策定</li>
-                                <li>社員向け研修セット</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-card">
-                            <span class="pricing-tier" style="background-color: var(--color-accent-ai); color: var(--color-text-main);">継続顧問</span>
-                            <div class="pricing-price">月額 50,000円〜</div>
-                            <div class="pricing-price-sub">継続的な伴走サポート</div>
-                            <ul class="pricing-features">
-                                <li>月1回のMTG（オンライン）</li>
-                                <li>随時チャット相談対応</li>
-                                <li>AI活用施策の企画・改善提案</li>
-                            </ul>
-                        </div>
+                    <div class="pricing-service-header">
+                        <span class="service-number">04</span>
+                        <h2 class="pricing-service-title">AI活用支援・業務効率化</h2>
                     </div>
-                    <p class="pricing-option">※ LLMを活用した自動化ツール開発：300,000円〜<small style="color:var(--color-text-muted);">（税別）</small><br>（要件により変動）</p>
+                    <p class="pricing-service-desc">
+                        「AIを使いたいが何から始めればいいかわからない」「情報漏洩が心配で社内展開に踏み切れない」。
+                        導入準備・安全な環境整備・社内定着まで、段階に合わせて丁寧にサポートします。
+                    </p>
+                    <div class="pricing-grid">
+
+                        <!-- 基礎研修 -->
+                        <div class="pricing-card">
+                            <div class="card-top">
+                                <span class="pricing-tier" style="background-color: var(--color-accent-ai); color: var(--color-text-main);">基礎研修</span>
+                                <div class="pricing-plan-name">AIを正しく使い始める</div>
+                                <p class="pricing-for">「まず社内でAIを安全に試してみたい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        社内AI利用ガイドライン・ルール策定
+                                    </li>
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        ハンズオン研修（半日・実業務で体験）
+                                    </li>
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        業務別プロンプト作成サポート
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">費用（目安）</div>
+                                    <div class="pricing-price ai-price">100,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta ai-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                        <!-- 環境構築 -->
+                        <div class="pricing-card ai-featured">
+                            <div class="card-top">
+                                <span class="pricing-tier ai-tier">環境構築</span>
+                                <div class="pricing-plan-name">安全なAI環境を会社に整える</div>
+                                <p class="pricing-for">「情報漏洩が心配で、全社でAIを使える環境を構築したい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        情報漏洩対策済みの社内専用AI環境の構築
+                                    </li>
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        セキュリティポリシー・社内利用ルール策定
+                                    </li>
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        全社員向け導入研修セット
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">費用（目安）</div>
+                                    <div class="pricing-price ai-price">200,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta ai-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                        <!-- 継続顧問 -->
+                        <div class="pricing-card">
+                            <div class="card-top">
+                                <span class="pricing-tier" style="background-color: var(--color-accent-ai); color: var(--color-text-main);">継続顧問</span>
+                                <div class="pricing-plan-name">継続的に活用を深める</div>
+                                <p class="pricing-for">「導入後もAI活用を社内で定着・拡大させていきたい」という方に</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        月1回のオンラインMTG（振り返りと次の施策）
+                                    </li>
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        随時チャット相談対応（素朴な疑問もOK）
+                                    </li>
+                                    <li>
+                                        <span class="check-icon ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                        AI活用の新施策企画・改善提案
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-foot">
+                                <div class="pricing-price-wrap">
+                                    <div class="pricing-label">費用（目安）</div>
+                                    <div class="pricing-price ai-price">月額 50,000円〜<span class="pricing-price-tax">税別</span></div>
+                                </div>
+                                <a href="/contact.html" class="card-cta ai-cta">この内容で相談する</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="pricing-option">＋ LLMを活用した自動化ツール開発：300,000円〜（税別）／要件により変動</p>
                 </div>
 
             </div>
@@ -363,8 +915,10 @@
             <div class="container">
                 <h2 class="h2">まずはお気軽に<br>ご相談ください</h2>
                 <p>ご予算・ご要望に合わせた最適なプランをご提案いたします。</p>
-                <a href="/contact.html" class="btn btn-outline"
-                    style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>
+                <a href="/contact.html" class="btn CTA-BTN">
+                    お問い合わせフォームへ
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
             </div>
         </section>
     </main>
