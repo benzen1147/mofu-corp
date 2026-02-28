@@ -10,96 +10,90 @@
     <meta name="description" content="合同会社mofuのコーポレートサイト制作サービス。問い合わせにつながるWebサイトを制作します。">
     <link rel="stylesheet" href="/css/style.css">
     <style>
-        section.section {
-            padding: var(--space-md) 0 var(--space-2xl);
+        section.section { padding: var(--space-md) 0 var(--space-xl); }
+
+        /* 既存ブロック */
+        .pain-block { background-color: var(--color-secondary); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-lg); }
+        .pain-block h2 { font-size: 1.5rem; color: var(--color-primary-dark); font-weight: 700; margin-bottom: var(--space-md); }
+        .pain-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+        .pain-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1.05rem; line-height: 1.7; color: var(--color-text-main); }
+        .pain-list li::before { content: '▶'; color: var(--color-primary); font-size: 0.75rem; flex-shrink: 0; margin-top: 5px; }
+        .solution-block { background-color: var(--color-bg-white); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); margin-bottom: var(--space-lg); }
+        .solution-block h2 { font-size: 1.5rem; color: var(--color-primary-dark); font-weight: 700; margin-bottom: var(--space-md); }
+        .solution-block p { font-size: 1.05rem; line-height: 1.9; color: var(--color-text-main); margin-bottom: var(--space-md); }
+        .feature-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-sm); }
+        .feature-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; line-height: 1.6; font-weight: 600; color: var(--color-text-main); }
+        .feature-list li::before { content: '✓'; color: var(--color-primary-dark); font-weight: 700; flex-shrink: 0; }
+
+        /* 共通新規ブロック h2 */
+        .target-block h2, .case-block h2, .reason-block h2,
+        .flow-block h2, .pricing-hint-block h2, .faq-block h2 {
+            font-size: 1.5rem; color: var(--color-primary-dark); font-weight: 700; margin-bottom: var(--space-md);
         }
 
-        .pain-block {
-            background-color: var(--color-secondary);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            border: 1px solid var(--color-border);
-            margin-bottom: var(--space-lg);
-        }
+        /* こんな企業様に */
+        .target-block { background-color: var(--color-bg-white); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); margin-bottom: var(--space-lg); }
+        .target-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+        .target-item { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background-color: var(--color-secondary); border-radius: var(--radius-md); font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main); }
+        .target-item::before { content: '✓'; color: var(--color-primary); font-weight: 700; flex-shrink: 0; }
 
-        .pain-block h2 {
-            font-size: 1.5rem;
-            color: var(--color-primary-dark);
-            font-weight: 700;
-            margin-bottom: var(--space-md);
-        }
+        /* 支援事例 */
+        .case-block { border-left: 4px solid var(--color-primary); background-color: var(--color-bg-white); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: var(--space-lg); box-shadow: var(--shadow-sm); margin-bottom: var(--space-lg); }
+        .case-industry { display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--color-primary-dark); background: var(--color-primary-light); padding: 4px 12px; border-radius: var(--radius-full); margin-bottom: 12px; }
+        .case-heading { font-size: 1.2rem; font-weight: 700; color: var(--color-text-main); line-height: 1.5; margin-bottom: var(--space-md); }
+        .case-cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-md); }
+        .case-col-head { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; color: var(--color-primary-dark); text-transform: uppercase; margin-bottom: 6px; }
+        .case-col-body { font-size: 0.93rem; line-height: 1.7; color: var(--color-text-muted); }
+        .case-result { display: flex; align-items: center; gap: var(--space-md); background: var(--color-primary-light); border-radius: var(--radius-md); padding: 14px var(--space-md); flex-wrap: wrap; }
+        .case-result-num { font-size: 1.4rem; font-weight: 700; color: var(--color-primary-dark); white-space: nowrap; flex-shrink: 0; }
+        .case-result-label { font-size: 0.9rem; color: var(--color-text-main); line-height: 1.5; }
 
-        .pain-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+        /* mofuを選ぶ理由 */
+        .reason-block { background-color: var(--color-secondary); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg); }
+        .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+        .reason-card { background: var(--color-bg-white); border-radius: var(--radius-md); padding: var(--space-md); border: 1px solid var(--color-border); }
+        .reason-num { font-size: 2rem; font-weight: 700; color: var(--color-primary); line-height: 1; margin-bottom: 8px; }
+        .reason-title { font-size: 1rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 8px; line-height: 1.4; }
+        .reason-desc { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; }
 
-        .pain-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--color-text-main);
-        }
+        /* ご支援の流れ */
+        .flow-block { background-color: var(--color-bg-white); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); margin-bottom: var(--space-lg); }
+        .flow-steps { display: flex; align-items: flex-start; gap: 0; margin-top: var(--space-sm); }
+        .flow-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 6px; }
+        .flow-arrow { flex-shrink: 0; font-size: 1.4rem; color: var(--color-primary); margin-top: 8px; line-height: 1; padding: 0 2px; }
+        .flow-num { width: 32px; height: 32px; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px; flex-shrink: 0; }
+        .flow-title { font-size: 0.82rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 4px; line-height: 1.4; }
+        .flow-desc { font-size: 0.73rem; color: var(--color-text-muted); line-height: 1.5; }
+        .flow-note { font-size: 0.83rem; color: var(--color-text-muted); margin-top: var(--space-sm); text-align: center; line-height: 1.6; }
 
-        .pain-list li::before {
-            content: '▶';
-            color: var(--color-primary);
-            font-size: 0.75rem;
-            flex-shrink: 0;
-            margin-top: 5px;
-        }
+        /* 料金の目安 */
+        .pricing-hint-block { background: var(--color-secondary); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg); }
+        .pricing-hint-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-bottom: var(--space-md); }
+        .pricing-hint-item { background: var(--color-bg-white); border-radius: var(--radius-md); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); text-align: center; }
+        .hint-tier { font-size: 0.78rem; font-weight: 600; color: var(--color-primary-dark); background: var(--color-primary-light); display: inline-block; padding: 3px 10px; border-radius: var(--radius-full); margin-bottom: 8px; }
+        .hint-price { font-size: 1.1rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 4px; }
+        .hint-desc { font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.4; }
+        .pricing-hint-cta { text-align: center; font-size: 0.9rem; color: var(--color-text-muted); }
+        .pricing-hint-cta a { color: var(--color-primary-dark); font-weight: 600; text-decoration: underline; }
 
-        .solution-block {
-            background-color: var(--color-bg-white);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-sm);
-        }
+        /* よくある質問 */
+        .faq-block { background-color: var(--color-bg-white); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
+        .faq-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+        .faq-item { padding-bottom: var(--space-sm); border-bottom: 1px solid var(--color-border); }
+        .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .faq-q { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px; }
+        .faq-q-badge { width: 26px; height: 26px; min-width: 26px; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; }
+        .faq-q-text { font-size: 1rem; font-weight: 700; color: var(--color-text-main); line-height: 1.5; padding-top: 2px; }
+        .faq-a { font-size: 0.93rem; color: var(--color-text-muted); line-height: 1.8; padding-left: 38px; }
 
-        .solution-block h2 {
-            font-size: 1.5rem;
-            color: var(--color-primary-dark);
-            font-weight: 700;
-            margin-bottom: var(--space-md);
-        }
-
-        .solution-block p {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: var(--color-text-main);
-            margin-bottom: var(--space-md);
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: var(--space-sm);
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 1rem;
-            line-height: 1.6;
-            font-weight: 600;
-            color: var(--color-text-main);
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            color: var(--color-primary-dark);
-            font-weight: 700;
-            flex-shrink: 0;
+        @media (max-width: 768px) {
+            .reason-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
+            .flow-steps { flex-direction: column; gap: var(--space-sm); }
+            .flow-step { flex-direction: row; align-items: flex-start; text-align: left; padding: 0; }
+            .flow-num { margin-bottom: 0; margin-right: 12px; }
+            .flow-arrow { display: none; }
+            .case-cols { grid-template-columns: 1fr; }
+            .pricing-hint-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -118,6 +112,7 @@
         <section class="section">
             <div class="container fade-in">
 
+                <!-- 悩み -->
                 <div class="pain-block">
                     <h2>こんなことに悩んでいませんか？</h2>
                     <ul class="pain-list">
@@ -127,6 +122,18 @@
                     </ul>
                 </div>
 
+                <!-- こんな企業様に -->
+                <div class="target-block">
+                    <h2>こんな企業様に選ばれています</h2>
+                    <div class="target-grid">
+                        <div class="target-item">創業から数年が経ち、古くなったサイトを刷新したい</div>
+                        <div class="target-item">Webからの問い合わせをゼロから仕組みとして作りたい</div>
+                        <div class="target-item">IT担当者がおらず、公開後も自分たちで更新できるサイトが欲しい</div>
+                        <div class="target-item">採用強化のために、会社の魅力が伝わるサイトを整備したい</div>
+                    </div>
+                </div>
+
+                <!-- できること -->
                 <div class="solution-block">
                     <h2>合同会社mofuにできること</h2>
                     <p>
@@ -140,6 +147,144 @@
                     </ul>
                 </div>
 
+                <!-- 支援事例 -->
+                <div class="case-block">
+                    <h2>支援事例</h2>
+                    <span class="case-industry">製造業｜従業員20名</span>
+                    <p class="case-heading">「10年間放置していたサイト」を刷新し、<br>Web経由の問い合わせが月0件から月4件へ</p>
+                    <div class="case-cols">
+                        <div>
+                            <p class="case-col-head">課題</p>
+                            <p class="case-col-body">10年以上更新していない古いサイトがスマホ非対応。競合に比べて信頼感が薄く、営業活動でURLを伝えても逆効果になることすらあった。</p>
+                        </div>
+                        <div>
+                            <p class="case-col-head">施策</p>
+                            <p class="case-col-body">完全レスポンシブ化・事業内容と実績ページの整備・問い合わせフォームへの導線最適化・Googleマイビジネス連携を実施。</p>
+                        </div>
+                    </div>
+                    <div class="case-result">
+                        <span class="case-result-num">月0件 → 月4件</span>
+                        <span class="case-result-label">Web経由の問い合わせ数（公開3ヶ月後の実績）</span>
+                    </div>
+                </div>
+
+                <!-- 選ぶ理由 -->
+                <div class="reason-block">
+                    <h2>mofuを選ぶ3つの理由</h2>
+                    <div class="reason-grid">
+                        <div class="reason-card">
+                            <div class="reason-num">01</div>
+                            <div class="reason-title">担当者が最初から最後まで変わらない</div>
+                            <p class="reason-desc">大手では分業でブツ切りになりがちな、ヒアリング→デザイン→実装→保守を、一人の担当者が一貫して担当します。「あの話、誰に伝えればいいの?」がなくなります。</p>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-num">02</div>
+                            <div class="reason-title">公開後も自分で更新できる設計</div>
+                            <p class="reason-desc">WordPressをベースに、操作マニュアルと使い方レクチャーをセットで提供します。「更新のたびに制作会社に頼んで費用がかかる」状態から抜け出せます。</p>
+                        </div>
+                        <div class="reason-card">
+                            <div class="reason-num">03</div>
+                            <div class="reason-title">「作って終わり」にしない伴走体制</div>
+                            <p class="reason-desc">公開後のアクセス解析・改善提案まで一貫してサポートします。サイトは公開してからが本番。数字を見ながら育てる視点でご支援します。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ご支援の流れ -->
+                <div class="flow-block">
+                    <h2>ご支援の流れ</h2>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="flow-num">1</div>
+                            <div class="flow-title">無料ヒアリング</div>
+                            <div class="flow-desc">オンライン30〜60分。目的・ターゲット・参考サイトをお聞きします</div>
+                        </div>
+                        <div class="flow-arrow">›</div>
+                        <div class="flow-step">
+                            <div class="flow-num">2</div>
+                            <div class="flow-title">企画・お見積り</div>
+                            <div class="flow-desc">サイト構成案と概算見積りを提示。1〜2週間</div>
+                        </div>
+                        <div class="flow-arrow">›</div>
+                        <div class="flow-step">
+                            <div class="flow-num">3</div>
+                            <div class="flow-title">デザイン制作</div>
+                            <div class="flow-desc">トップページのデザイン案を提示し方向性を確認。2〜4週間</div>
+                        </div>
+                        <div class="flow-arrow">›</div>
+                        <div class="flow-step">
+                            <div class="flow-num">4</div>
+                            <div class="flow-title">コーディング・実装</div>
+                            <div class="flow-desc">全ページの実装・スマホ対応・CMS組み込み。2〜4週間</div>
+                        </div>
+                        <div class="flow-arrow">›</div>
+                        <div class="flow-step">
+                            <div class="flow-num">5</div>
+                            <div class="flow-title">確認・修正・公開</div>
+                            <div class="flow-desc">テスト環境でご確認後、修正を経て本番公開。1〜2週間</div>
+                        </div>
+                    </div>
+                    <p class="flow-note">※ 標準的なコーポレートサイト（10〜15ページ）の場合、全体で2〜3ヶ月が目安です。急ぎのご相談もお気軽にどうぞ。</p>
+                </div>
+
+                <!-- 料金の目安 -->
+                <div class="pricing-hint-block">
+                    <h2>料金の目安</h2>
+                    <div class="pricing-hint-grid">
+                        <div class="pricing-hint-item">
+                            <span class="hint-tier">ライト</span>
+                            <div class="hint-price">150,000円〜</div>
+                            <div class="hint-desc">LP・5ページ以内の小規模サイト</div>
+                        </div>
+                        <div class="pricing-hint-item">
+                            <span class="hint-tier">スタンダード</span>
+                            <div class="hint-price">350,000円〜</div>
+                            <div class="hint-desc">コーポレートサイト（10〜15ページ）</div>
+                        </div>
+                        <div class="pricing-hint-item">
+                            <span class="hint-tier">プレミアム</span>
+                            <div class="hint-price">700,000円〜</div>
+                            <div class="hint-desc">採用+コーポレート等の複合・大規模サイト</div>
+                        </div>
+                    </div>
+                    <p class="pricing-hint-cta">※ すべて税別。規模・要件により変動します。詳細は<a href="/pricing.html">料金プランページ</a>をご覧ください。</p>
+                </div>
+
+                <!-- よくある質問 -->
+                <div class="faq-block">
+                    <h2>よくある質問</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-q">
+                                <span class="faq-q-badge">Q</span>
+                                <span class="faq-q-text">写真や文章は自分たちで用意する必要がありますか？</span>
+                            </div>
+                            <p class="faq-a">テキストは基本的にご提供いただきますが、ご要望に応じてライティング代行も対応しています。写真はご用意いただけない場合、高品質なフリー素材を活用します。追加料金でプロカメラマンの手配も可能です。</p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-q">
+                                <span class="faq-q-badge">Q</span>
+                                <span class="faq-q-text">制作途中で内容を変更することはできますか？</span>
+                            </div>
+                            <p class="faq-a">ヒアリング後の要件確定時点まであれば柔軟に対応しています。デザイン承認後の大幅な仕様変更は追加費用が発生することがありますが、事前にご相談いただければ対応策を一緒に考えます。</p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-q">
+                                <span class="faq-q-badge">Q</span>
+                                <span class="faq-q-text">公開後に自分でページを更新できますか？</span>
+                            </div>
+                            <p class="faq-a">WordPress導入の場合、管理画面から簡単にテキストや画像を更新できます。使い方のレクチャーと操作マニュアルの提供もセットで行っています。</p>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-q">
+                                <span class="faq-q-badge">Q</span>
+                                <span class="faq-q-text">急いでいます。最短でどれくらいで公開できますか？</span>
+                            </div>
+                            <p class="faq-a">ご依頼内容によりますが、LPやシンプルな5ページ以内のサイトであれば最短3〜4週間での公開実績があります。まずご相談ください。スケジュールに合わせた進め方をご提案します。</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -147,8 +292,7 @@
             <div class="container">
                 <h2 class="h2">まずはお気軽にご相談ください</h2>
                 <p>ご相談は<a href="/contact.html" style="color:#fff; text-decoration:underline;">お問い合わせ</a>ページから承っております。費用・納期のご質問だけでも歓迎です。</p>
-                <a href="/contact.html" class="btn btn-outline"
-                    style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>
+                <a href="/contact.html" class="btn btn-outline" style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>
             </div>
         </section>
     </main>
