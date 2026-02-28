@@ -42,12 +42,19 @@
             width: 200px;
             min-width: 200px;
             flex-shrink: 0;
-            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             border-right: 1px solid var(--color-border);
+            overflow: hidden;
+            display: block;
+            min-height: 140px;
             transition: opacity 0.3s ease;
+        }
+
+        .blog-thumbnail img {
+            width: 100%;
+            height: 100%;
+            min-height: 140px;
+            object-fit: cover;
+            display: block;
         }
 
         .blog-card:hover .blog-thumbnail {
@@ -62,16 +69,14 @@
                 width: 100%;
                 min-width: unset;
                 height: 160px;
+                min-height: 160px;
                 border-right: none;
                 border-bottom: 1px solid var(--color-border);
             }
-        }
-
-        .blog-thumbnail svg {
-            width: 48px;
-            height: 48px;
-            color: var(--color-primary-dark);
-            opacity: 0.6;
+            .blog-thumbnail img {
+                height: 160px;
+                min-height: 160px;
+            }
         }
 
         .blog-content {
@@ -147,10 +152,7 @@
                     <!-- Article 16: Feb 28 お知らせ -->
                     <article class="blog-card">
                         <a href="/blog/article-16.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                            </svg>
+                            <img src="/images/blog/article-16.jpg" alt="オフィスでミーティングをするチームのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -165,12 +167,7 @@
                     <article class="blog-card">
                         <a href="/blog/article-15.html" class="blog-thumbnail" tabindex="-1"
                             style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent-ai) 100%);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            </svg>
+                            <img src="/images/blog/article-15.jpg" alt="AIと人間の協働をテーマにしたロボットのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -184,11 +181,7 @@
                     <!-- Article 1: Feb 26 お知らせ -->
                     <article class="blog-card">
                         <a href="/blog/article-1.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 20h9"></path>
-                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                            </svg>
+                            <img src="/images/blog/article-1.jpg" alt="Web制作会社との打ち合わせ・チームミーティングのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -202,12 +195,7 @@
                     <!-- Article 14: Feb 25 Web制作 -->
                     <article class="blog-card">
                         <a href="/blog/article-14.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
+                            <img src="/images/blog/article-14.jpg" alt="Webサイトリニューアル計画・デスクワークのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -222,12 +210,7 @@
                     <article class="blog-card">
                         <a href="/blog/article-3.html" class="blog-thumbnail" tabindex="-1"
                             style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent-ai) 100%);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
-                                <circle cx="12" cy="5" r="2"></circle>
-                                <path d="M12 7v4"></path>
-                            </svg>
+                            <img src="/images/blog/article-3.jpg" alt="ノートパソコンとAIツールを使う中小企業のイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -241,11 +224,7 @@
                     <!-- Article 4: Feb 23 Web制作 -->
                     <article class="blog-card">
                         <a href="/blog/article-4.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
+                            <img src="/images/blog/article-4.jpg" alt="モダンなWebデザイン・リニューアルのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -259,14 +238,7 @@
                     <!-- Article 5: Feb 22 マーケティング -->
                     <article class="blog-card">
                         <a href="/blog/article-5.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                            </svg>
+                            <img src="/images/blog/article-5.jpg" alt="SNS・ソーシャルメディアマーケティングのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -282,12 +254,7 @@
                     <article class="blog-card">
                         <a href="/blog/article-6.html" class="blog-thumbnail" tabindex="-1"
                             style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent-ai) 100%);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 16v-4"></path>
-                                <path d="M12 8h.01"></path>
-                            </svg>
+                            <img src="/images/blog/article-6.jpg" alt="AIチャットボット・カスタマーサポートのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -301,12 +268,7 @@
                     <!-- Article 7: Feb 20 システム開発 -->
                     <article class="blog-card">
                         <a href="/blog/article-7.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                            </svg>
+                            <img src="/images/blog/article-7.jpg" alt="業務効率化ツール・デジタル化のイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -321,11 +283,7 @@
                     <!-- Article 13: Feb 19 マーケティング -->
                     <article class="blog-card">
                         <a href="/blog/article-13.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                <polyline points="17 6 23 6 23 12"></polyline>
-                            </svg>
+                            <img src="/images/blog/article-13.jpg" alt="Google検索・リスティング広告のイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -340,19 +298,7 @@
                     <article class="blog-card">
                         <a href="/blog/article-12.html" class="blog-thumbnail" tabindex="-1"
                             style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent-ai) 100%);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                                <rect x="9" y="9" width="6" height="6"></rect>
-                                <line x1="9" y1="1" x2="9" y2="4"></line>
-                                <line x1="15" y1="1" x2="15" y2="4"></line>
-                                <line x1="9" y1="20" x2="9" y2="23"></line>
-                                <line x1="15" y1="20" x2="15" y2="23"></line>
-                                <line x1="20" y1="9" x2="23" y2="9"></line>
-                                <line x1="20" y1="14" x2="23" y2="14"></line>
-                                <line x1="1" y1="9" x2="4" y2="9"></line>
-                                <line x1="1" y1="14" x2="4" y2="14"></line>
-                            </svg>
+                            <img src="/images/blog/article-12.jpg" alt="ChatGPTを業務活用するイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -366,11 +312,7 @@
                     <!-- Article 11: Feb 17 Web制作 -->
                     <article class="blog-card">
                         <a href="/blog/article-11.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
+                            <img src="/images/blog/article-11.jpg" alt="Web制作・プログラミング作業のイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -384,12 +326,7 @@
                     <!-- Article 10: Feb 16 マーケティング -->
                     <article class="blog-card">
                         <a href="/blog/article-10.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="20" x2="18" y2="10"></line>
-                                <line x1="12" y1="20" x2="12" y2="4"></line>
-                                <line x1="6" y1="20" x2="6" y2="14"></line>
-                            </svg>
+                            <img src="/images/blog/article-10.jpg" alt="コンテンツマーケティング戦略のイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -403,11 +340,7 @@
                     <!-- Article 9: Feb 15 システム開発 -->
                     <article class="blog-card">
                         <a href="/blog/article-9.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
-                            </svg>
+                            <img src="/images/blog/article-9.jpg" alt="ペーパーレス化・デジタル業務のイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -421,12 +354,7 @@
                     <!-- Article 8: Feb 14 Web制作 -->
                     <article class="blog-card">
                         <a href="/blog/article-8.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
+                            <img src="/images/blog/article-8.jpg" alt="SEO・アクセス解析のグラフイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -440,11 +368,7 @@
                     <!-- Article 2: Feb 13 お知らせ -->
                     <article class="blog-card">
                         <a href="/blog/article-2.html" class="blog-thumbnail" tabindex="-1">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-                                <line x1="4" y1="22" x2="4" y2="15"></line>
-                            </svg>
+                            <img src="/images/blog/article-2.jpg" alt="チーム創業・ビジネスチームのイメージ">
                         </a>
                         <div class="blog-content">
                             <div class="blog-meta">
