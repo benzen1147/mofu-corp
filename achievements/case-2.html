@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>社内業務の生成AI活用ワークショップ | 支援事例 | 合同会社mofu</title>
+    <meta name="description" content="「AIを使いたいが何から始めればいいかわからない」という企業様へ。ガイドライン策定からハンズオン研修まで、参加者全員が業務でAIを活用できるようになった事例をご紹介します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .case-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-bg-white) 100%);
+            padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-md);
+        }
+        .case-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: var(--space-md);
+        }
+        .case-number {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            letter-spacing: 0.15em;
+            background: var(--color-primary-light);
+            padding: 5px 14px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--color-primary);
+        }
+        .case-tag {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 5px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .case-tag.ai { background-color: #3A9E9A; }
+        .case-tag.system { background-color: var(--color-primary-dark); }
+        .case-title {
+            font-size: 2.25rem;
+            color: var(--color-text-main);
+            line-height: 1.4;
+            margin-bottom: var(--space-md);
+            font-weight: 700;
+        }
+        .case-lead {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
+            max-width: 660px;
+            margin: 0;
+        }
+        /* Section Label */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 7px 20px;
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-lg);
+        }
+        .before-label { background: #FEECE6; color: #B8431A; }
+        .proposal-label { background: var(--color-primary-light); color: var(--color-primary-dark); }
+        .after-label { background: #D1F0ED; color: #2A7D6B; }
+        /* Before */
+        .before-section {
+            background-color: #FFF9F7;
+            padding: var(--space-md) 0 var(--space-xl);
+        }
+        .section-heading {
+            font-size: 1.6rem;
+            color: var(--color-text-main);
+            margin-bottom: var(--space-md);
+            line-height: 1.5;
+            font-weight: 700;
+        }
+        .customer-voice {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg) var(--space-lg) var(--space-lg) calc(var(--space-lg) + 12px);
+            border-left: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-lg);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--color-text-main);
+            font-style: italic;
+        }
+        .problem-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0;
+        }
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 14px var(--space-md);
+            border: 1px solid #F2D8D0;
+            font-size: 0.975rem;
+            line-height: 1.7;
+            color: var(--color-text-main);
+        }
+        .prob-icon {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            background: #FEECE6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3px;
+            color: #B8431A;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        /* Flow Divider */
+        .flow-divider {
+            text-align: center;
+            padding: 12px 0;
+            background: var(--color-bg-white);
+        }
+        .flow-inner {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--color-primary);
+        }
+        .flow-inner span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+        .flow-inner svg {
+            width: 28px;
+            height: 28px;
+        }
+        /* Proposal */
+        .proposal-section {
+            background-color: var(--color-bg-white);
+            padding: var(--space-md) 0 var(--space-xl);
+        }
+        .proposal-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        .proposal-step {
+            background: var(--color-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+        }
+        .step-num {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
+        }
+        .step-title {
+            font-size: 0.975rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .step-desc {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+        /* After */
+        .after-section {
+            background-color: #F0FAF9;
+            padding: var(--space-md) 0 var(--space-xl);
+        }
+        .metrics-grid {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin: var(--space-lg) 0;
+        }
+        .metric-item {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-md) var(--space-lg);
+            border: 1px solid #B9DFDE;
+            text-align: center;
+            min-width: 140px;
+            box-shadow: var(--shadow-sm);
+        }
+        .metric-number {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #2A7D6B;
+            line-height: 1.2;
+        }
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+        .result-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0 0 var(--space-lg);
+        }
+        .result-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.975rem;
+            line-height: 1.7;
+            color: var(--color-text-main);
+        }
+        .res-icon {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            background: #D1F0ED;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3px;
+            color: #2A7D6B;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .customer-comment {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid #B9DFDE;
+            box-shadow: var(--shadow-sm);
+        }
+        .comment-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #2A7D6B;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+        .comment-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--color-text-main);
+            margin: 0;
+        }
+        .comment-attr {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+        /* Nav */
+        .case-nav {
+            max-width: var(--container-width);
+            margin: var(--space-xl) auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-md);
+        }
+        @media (max-width: 768px) {
+            .case-title { font-size: 1.6rem; }
+            .section-heading { font-size: 1.3rem; }
+            .proposal-steps { grid-template-columns: 1fr; }
+            .metrics-grid { justify-content: center; }
+            .case-nav { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <common-header></common-header>
+    <main>
+        <!-- Case Header -->
+        <div class="case-header fade-in">
+            <div class="container">
+                <div class="case-meta">
+                    <span class="case-number">CASE 02</span>
+                    <span class="case-tag ai">AI支援</span>
+                </div>
+                <h1 class="case-title">社内業務の生成AI活用<br>ワークショップ</h1>
+                <p class="case-lead">「AIを使いたいが、何から始めればいいかわからない」。その最初の壁を取り払い、参加者全員が業務でAIを活用できるようになりました。</p>
+            </div>
+        </div>
+
+        <!-- Before -->
+        <section class="before-section">
+            <div class="container fade-in">
+                <span class="section-label before-label">抱えていたお悩み</span>
+                <h2 class="section-heading">「AIを使えば便利と聞くけど、<br>うちの会社でどう使えばいいのか…」</h2>
+                <div class="customer-voice">
+                    「ChatGPTって名前は聞いたことあるんですが、うちの会社でどう使うのか想像もつかなくて。しかも社員が勝手に使って情報漏洩でもしたら困るし…何から始めていいか全然わからない状態でした」
+                </div>
+                <ul class="problem-list">
+                    <li><span class="prob-icon">✕</span>「AIを使った方がいい」とはわかっているが、具体的な導入手順がわからない</li>
+                    <li><span class="prob-icon">✕</span>社員が個人的にAIを試しているが、組織として業務への活用ができていない</li>
+                    <li><span class="prob-icon">✕</span>顧客情報や社内機密を入力するリスクが心配で、会社として正式に推進できない</li>
+                    <li><span class="prob-icon">✕</span>AIへの苦手意識を持つスタッフもおり、全社展開に踏み切れない</li>
+                    <li><span class="prob-icon">✕</span>「AI担当者」を置く余裕がなく、外部の専門家に相談できる機会もなかった</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Flow -->
+        <div class="flow-divider">
+            <div class="flow-inner">
+                <span>mofuのアプローチ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </div>
+        </div>
+
+        <!-- Proposal -->
+        <section class="proposal-section">
+            <div class="container fade-in">
+                <span class="section-label proposal-label">mofuのご提案・取り組み</span>
+                <h2 class="section-heading">ルール先行で「安心して使える」<br>環境をつくる</h2>
+                <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 0;">「ツールを教える」だけではなく、「この会社でどう使うか」というルールと文化を一緒につくることを重視しました。</p>
+                <div class="proposal-steps">
+                    <div class="proposal-step">
+                        <div class="step-num">STEP 01</div>
+                        <div class="step-title">現状ヒアリング</div>
+                        <p class="step-desc">業務フローと課題を整理し、AIが最も効果を発揮できる業務を特定。現場の声をもとに優先順位を決定しました。</p>
+                    </div>
+                    <div class="proposal-step">
+                        <div class="step-num">STEP 02</div>
+                        <div class="step-title">社内利用ガイドライン策定</div>
+                        <p class="step-desc">「これはAIに入力していい／いけない」という明確なルールと判断基準を文書化。情報漏洩への不安を解消しました。</p>
+                    </div>
+                    <div class="proposal-step">
+                        <div class="step-num">STEP 03</div>
+                        <div class="step-title">ハンズオン研修（半日）</div>
+                        <p class="step-desc">実際のパソコンで操作しながら、業務に直結するAI活用を体験。ITが苦手なスタッフでも安心して参加できる進行を心がけました。</p>
+                    </div>
+                    <div class="proposal-step">
+                        <div class="step-num">STEP 04</div>
+                        <div class="step-title">業務別プロンプトテンプレート集の作成</div>
+                        <p class="step-desc">メール作成・議事録要約・資料案作成など、すぐに使えるプロンプトを一覧化して配布しました。</p>
+                    </div>
+                    <div class="proposal-step">
+                        <div class="step-num">STEP 05</div>
+                        <div class="step-title">研修後1ヶ月フォローアップ</div>
+                        <p class="step-desc">チャットで随時質問を受け付け。「これはできる？」という現場からの声に柔軟に対応しました。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow -->
+        <div class="flow-divider">
+            <div class="flow-inner">
+                <span>導入後の変化</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </div>
+        </div>
+
+        <!-- After -->
+        <section class="after-section">
+            <div class="container fade-in">
+                <span class="section-label after-label">導入後の効果</span>
+                <h2 class="section-heading">「AIが怖いものでなくなった」<br>全員が日常業務で活用開始</h2>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-number">100%</div>
+                        <div class="metric-label">参加者全員が<br>AIを業務活用開始</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">約50%</div>
+                        <div class="metric-label">定型業務の<br>作業時間を短縮</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">1週間</div>
+                        <div class="metric-label">研修後の<br>業務活用開始まで</div>
+                    </div>
+                </div>
+                <ul class="result-list">
+                    <li><span class="res-icon">✓</span>メール作成・議事録要約・資料案作成など、毎日の定型業務でAIを活用するスタッフが全員に</li>
+                    <li><span class="res-icon">✓</span>「AIのおかげで残業が減った」という声が研修後1週間以内に複数件</li>
+                    <li><span class="res-icon">✓</span>ガイドラインの明確化により、「これを入力していいか」という迷いがなくなり、安心して使える環境に</li>
+                    <li><span class="res-icon">✓</span>部署をまたいだAI活用の情報共有が自然と生まれ、社内のAIリテラシーが継続的に向上</li>
+                </ul>
+                <div class="customer-comment">
+                    <div class="comment-eyebrow">ご担当者様のコメント（一部抽象化）</div>
+                    <p class="comment-text">「研修前は『AIって難しそう』という空気が社内にありましたが、実際に自分のパソコンで使ってみると皆さんすぐに感動していました。特に長文のメール作成がAIのおかげで5分もかからなくなったと言うスタッフが多くて。ガイドラインを先に作っていただいたおかげで、『これは使っていいのか』という迷いがなくなり、安心してどんどん使えるようになりました」</p>
+                    <p class="comment-attr">サービス業・管理部門責任者様</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nav -->
+        <div class="case-nav">
+            <a href="/achievements/case-1.html" class="btn btn-outline" style="padding: 10px 24px;">← CASE 01へ</a>
+            <a href="/achievements/case-3.html" class="btn btn-primary" style="padding: 10px 24px;">CASE 03へ →</a>
+        </div>
+
+        <!-- CTA -->
+        <section class="global-cta fade-in">
+            <div class="container">
+                <h2 class="h2">同じようなお悩みをお持ちですか？</h2>
+                <p>まずはお気軽にご相談ください。初回相談は無料です。</p>
+                <a href="/contact.html" class="btn CTA-BTN">
+                    お問い合わせフォームへ
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>

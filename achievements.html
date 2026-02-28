@@ -38,6 +38,27 @@
             box-shadow: var(--shadow-md);
         }
 
+        a.achievement-card {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-sm);
+            transition: gap 0.2s ease;
+        }
+
+        a.achievement-card:hover .read-more {
+            gap: 10px;
+        }
+
         .achievement-card .bg-abstract-wrap {
             border-radius: 0;
             width: 200px;
@@ -160,7 +181,7 @@
 
                 <div class="achievements-grid">
                     <!-- Case 1 -->
-                    <div class="achievement-card fade-in">
+                    <a class="achievement-card fade-in" href="/achievements/case-1.html">
                         <img src="/images/0228-05.png" alt="BtoB企業様 コーポレートサイト全面刷新" style="width:200px; min-width:200px; object-fit:cover; flex-shrink:0;">
                         <div class="achievement-content">
                             <span class="achievement-tag">Web制作</span>
@@ -168,11 +189,12 @@
                             <p class="achievement-desc">
                                 古くなった企業サイトを、信頼感と清潔感のある最新デザインにリニューアル。構成の見直しとSEO対策により、問い合わせ数が月間200%向上しました。
                             </p>
+                            <span class="read-more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Case 2 -->
-                    <div class="achievement-card fade-in">
+                    <a class="achievement-card fade-in" href="/achievements/case-2.html">
                         <img src="/images/0228-06.png" alt="社内業務の生成AI活用ワークショップ" style="width:200px; min-width:200px; object-fit:cover; flex-shrink:0;">
                         <div class="achievement-content">
                             <span class="achievement-tag"
@@ -181,11 +203,12 @@
                             <p class="achievement-desc">
                                 生成AIの基礎知識から、日々の業務に直結するプロンプトの作成方法までをハンズオンで指導。社内導入の最初の壁を取り払うサポートを行いました。
                             </p>
+                            <span class="read-more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Case 3 -->
-                    <div class="achievement-card fade-in">
+                    <a class="achievement-card fade-in" href="/achievements/case-3.html">
                         <img src="/images/0228-07.png" alt="予約管理・顧客管理システムの開発" style="width:200px; min-width:200px; object-fit:cover; flex-shrink:0;">
                         <div class="achievement-content">
                             <span class="achievement-tag">システム開発</span>
@@ -193,8 +216,9 @@
                             <p class="achievement-desc">
                                 紙やエクセルで行っていたアナログな管理業務をクラウドシステム化。スタッフの事務作業時間を大幅に削減し、本業に集中できる環境を構築しました。
                             </p>
+                            <span class="read-more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
