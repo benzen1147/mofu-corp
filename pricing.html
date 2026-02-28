@@ -349,33 +349,87 @@
             }
 
             .pricing-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-                gap: 10px;
-                padding: 4px 4px 16px;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-            }
-
-            .pricing-grid::-webkit-scrollbar {
-                display: none;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                overflow-x: visible;
+                padding: 0;
             }
 
             .pricing-grid .pricing-card {
-                min-width: calc(100vw - 80px);
-                scroll-snap-align: center;
-                flex-shrink: 0;
+                min-width: unset;
+                scroll-snap-align: unset;
+            }
+
+            .card-top,
+            .card-body,
+            .card-foot {
+                padding: 10px 8px;
+            }
+
+            .pricing-tier {
+                font-size: 0.65rem;
+                padding: 3px 8px;
+                margin-bottom: 6px;
             }
 
             .pricing-plan-name {
-                font-size: 1rem;
+                font-size: 0.78rem;
+                margin-bottom: 4px;
+            }
+
+            .pricing-for {
+                font-size: 0.62rem;
+                line-height: 1.5;
+            }
+
+            .pricing-features li {
+                font-size: 0.62rem;
+                padding: 4px 0;
+                gap: 4px;
+            }
+
+            .check-icon {
+                width: 13px;
+                height: 13px;
+                min-width: 13px;
+            }
+
+            .check-icon svg {
+                width: 7px;
+                height: 7px;
+            }
+
+            .pricing-label {
+                font-size: 0.62rem;
             }
 
             .pricing-price {
-                font-size: 1.3rem;
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+
+            .pricing-price-tax {
+                font-size: 0.58rem;
+                margin-left: 2px;
+            }
+
+            .pricing-price-sub {
+                font-size: 0.6rem;
+                margin-top: 2px;
+            }
+
+            .pricing-price-wrap {
+                margin-bottom: 8px;
+            }
+
+            .card-cta {
+                font-size: 0.65rem;
+                padding: 7px 0;
+            }
+
+            .pricing-option {
+                font-size: 0.65rem;
             }
         }
 

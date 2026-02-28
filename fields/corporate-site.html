@@ -87,10 +87,46 @@
         .faq-a { font-size: 0.93rem; color: var(--color-text-muted); line-height: 1.8; padding-left: 38px; }
 
         @media (max-width: 768px) {
+            .page-header .h1 { font-size: 1.6rem; }
             .reason-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
-            .flow-steps { flex-direction: column; gap: var(--space-sm); }
-            .flow-step { flex-direction: row; align-items: flex-start; text-align: left; padding: 0; }
-            .flow-num { margin-bottom: 0; margin-right: 12px; }
+
+            .flow-steps { flex-direction: column; gap: 0; }
+
+            .flow-step {
+                display: grid;
+                grid-template-columns: 44px 1fr;
+                grid-template-rows: auto auto;
+                column-gap: 12px;
+                row-gap: 3px;
+                text-align: left;
+                padding: 14px 0;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .flow-step:last-child { border-bottom: none; }
+
+            .flow-num {
+                grid-column: 1;
+                grid-row: 1 / 3;
+                align-self: center;
+                justify-self: center;
+                margin: 0;
+            }
+
+            .flow-title {
+                grid-column: 2;
+                grid-row: 1;
+                align-self: end;
+                font-size: 0.88rem;
+            }
+
+            .flow-desc {
+                grid-column: 2;
+                grid-row: 2;
+                align-self: start;
+                font-size: 0.76rem;
+            }
+
             .flow-arrow { display: none; }
             .case-cols { grid-template-columns: 1fr; }
             .pricing-hint-grid { grid-template-columns: 1fr; }

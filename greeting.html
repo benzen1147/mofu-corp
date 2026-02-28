@@ -44,7 +44,7 @@
         }
 
         .greeting-signature {
-            margin-top: var(--space-xl);
+            margin-top: var(--space-md);
             text-align: right;
             border-top: 1px solid var(--color-border);
             padding-top: var(--space-md);
@@ -85,10 +85,18 @@
             letter-spacing: 0.03em;
         }
 
+        .title-br {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .greeting-title {
                 font-size: 1.4rem;
                 white-space: normal;
+            }
+
+            .title-br {
+                display: block;
             }
         }
     </style>
@@ -111,7 +119,7 @@
             <div class="container fade-in">
                 <div class="greeting-wrap">
                     <div class="greeting-content">
-                        <h2 class="greeting-title">もっと身近で、やさしいITを届けたい。</h2>
+                        <h2 class="greeting-title">もっと身近で、<br class="title-br">やさしいITを届けたい。</h2>
 
                         <p class="greeting-text">
                             「ITやAIは難しくて、冷たい印象がある」<br>
