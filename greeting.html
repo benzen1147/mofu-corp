@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>代表挨拶 | 合同会社mofu</title>
+    <meta name="description" content="合同会社mofu 代表社員・梶原萌花のメッセージ。もっと身近で、やさしいITをお客様に届けるための私たちの想いをご紹介します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+    <style>
+        .greeting-section {
+            padding: var(--space-lg) 0 var(--space-3xl);
+            background-color: var(--color-bg-white);
+        }
+
+        .greeting-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: flex-start;
+        }
+
+        .greeting-image-wrapper {
+            position: relative;
+        }
+
+        .greeting-content {
+            padding: var(--space-md) 0;
+        }
+
+        .greeting-title {
+            font-size: 1.7rem;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-lg);
+            line-height: 1.5;
+            letter-spacing: 0.03em;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .greeting-text {
+            font-size: 1.125rem;
+            line-height: 2;
+            color: var(--color-text-main);
+            margin-bottom: var(--space-md);
+        }
+
+        .greeting-signature {
+            margin-top: var(--space-xl);
+            text-align: right;
+            border-top: 1px solid var(--color-border);
+            padding-top: var(--space-md);
+        }
+
+        .greeting-signature span {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin-bottom: 8px;
+        }
+
+        .greeting-signature strong {
+            font-size: 2rem;
+            color: var(--color-text-main);
+            font-weight: 400;
+            font-family: 'Shippori Antique B1', serif;
+            letter-spacing: 0.15em;
+        }
+
+        @media (max-width: 768px) {
+            .greeting-wrap {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .greeting-title {
+                font-size: 1.4rem;
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <!-- Page Header -->
+        <div class="page-header fade-in">
+            <div class="container">
+                <h1 class="h1" style="margin-bottom: 8px;">代表挨拶</h1>
+                <p class="text-muted text-lg">Message from the Representative</p>
+            </div>
+        </div>
+
+        <section class="greeting-section">
+            <div class="container fade-in">
+                <div class="greeting-wrap">
+                    <div class="greeting-image-wrapper">
+                        <img src="/images/representative.jpg"
+                            alt="合同会社mofu 代表社員 梶原萌花"
+                            style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); object-fit: cover; aspect-ratio: 4/5;">
+                    </div>
+
+                    <div class="greeting-content">
+                        <h2 class="greeting-title">もっと身近で、やさしいITを届けたい。</h2>
+
+                        <p class="greeting-text">
+                            「ITやAIは難しくて、冷たい印象がある」<br>
+                            これまで多くのお客様とお話をする中で、そんな声を聞くことが少なくありませんでした。
+                        </p>
+
+                        <p class="greeting-text">
+                            一方で、IT技術や最新のAIは、正しく使えば人の負担を減らし、もっと自分らしく温かい時間の使い方を可能にしてくれる「やさしい道具」でもあります。<br>
+                            合同会社mofuは、そんなテクノロジーの力をもっと身近に、まるで「もふもふ」とした温かさで包み込むようにお客様のビジネスへお届けしたい、という想いから生まれました。
+                        </p>
+
+                        <p class="greeting-text">
+                            最先端の技術をただ提供するのではなく、「お客様にとって本当に必要なものは何か」に深く寄り添い、丁寧にご提案すること。<br>
+                            どんな些細な疑問でも気軽に相談できる、心強いパートナーであり続けること。
+                        </p>
+
+                        <p class="greeting-text">
+                            女性ならではのきめ細やかな視点と温かいコミュニケーションを大切にしながら、信頼できるWebサイト作りやAI活用支援を通じて、お客様のビジネスの確かな成長を共に歩んで参ります。<br>
+                            これからの合同会社mofuに、どうぞご期待ください。
+                        </p>
+
+                        <div class="greeting-signature">
+                            <span>合同会社mofu 代表社員</span>
+                            <img src="/images/0228-08.png" alt="梶原 萌花" style="height: 64px; width: auto; display: inline-block; transform: translateX(16px);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="global-cta fade-in">
+            <div class="container">
+                <h2 class="h2">私たちが力になります</h2>
+                <p>WebやAIに関するご不明点、どんな小さなことでもご相談ください。</p>
+                <a href="/contact.html" class="btn btn-outline"
+                    style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">ご相談・お問い合わせ</a>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

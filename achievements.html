@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>実績・対応分野 | 合同会社mofu</title>
+    <meta name="description" content="合同会社mofuの実績および対応可能なビジネス分野についてご紹介します。Web制作からAI導入まで幅広く対応可能です。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        section.section {
+            padding: var(--space-md) 0;
+        }
+
+        /* 3枚カードを縦1列・横長レイアウト */
+        .achievements-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .achievement-card {
+            background-color: var(--color-bg-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .achievement-card .bg-abstract-wrap {
+            border-radius: 0;
+            width: 200px;
+            min-width: 200px;
+            min-height: auto;
+            flex-shrink: 0;
+        }
+
+        .achievement-content {
+            padding: var(--space-md) var(--space-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .achievement-tag {
+            display: inline-block;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            align-self: flex-start;
+        }
+
+        .achievement-title {
+            font-size: 1.25rem;
+            color: var(--color-text-main);
+            margin-bottom: var(--space-sm);
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .achievement-desc {
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Supported Fields */
+        .fields-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        @media (max-width: 640px) {
+            .achievement-card {
+                flex-direction: column;
+            }
+            .achievement-card img {
+                width: 100% !important;
+                min-width: unset !important;
+                height: 160px;
+            }
+        }
+
+        .field-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: var(--space-md);
+            background-color: var(--color-bg-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        a.field-item {
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        a.field-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .field-item svg {
+            color: var(--color-primary);
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+        }
+
+        .field-item span {
+            font-weight: 600;
+            color: var(--color-text-main);
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <!-- Page Header -->
+        <div class="page-header fade-in">
+            <div class="container">
+                <h1 class="h1" style="margin-bottom: 8px;">実績・対応分野</h1>
+                <p class="text-muted text-lg">Achievements & Supported Fields</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+                <div class="text-center max-w-prose" style="margin: 0 auto var(--space-lg);">
+                    <h2 class="h2">主なご支援内容</h2>
+                    <p class="text-muted">
+                        合同会社mofuでは、Webサイト制作からAI技術の導入サポートまで、お客様のデジタル化を幅広く支援しています。以下はご支援の代表的なケースです。（※お客様の機密保持の観点から、一部を抽象化して掲載しております）
+                    </p>
+                </div>
+
+                <div class="achievements-grid">
+                    <!-- Case 1 -->
+                    <div class="achievement-card fade-in">
+                        <img src="/images/0228-05.png" alt="BtoB企業様 コーポレートサイト全面刷新" style="width:200px; min-width:200px; object-fit:cover; flex-shrink:0;">
+                        <div class="achievement-content">
+                            <span class="achievement-tag">Web制作</span>
+                            <h3 class="achievement-title">BtoB企業様 コーポレートサイト全面刷新</h3>
+                            <p class="achievement-desc">
+                                古くなった企業サイトを、信頼感と清潔感のある最新デザインにリニューアル。構成の見直しとSEO対策により、問い合わせ数が月間200%向上しました。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="achievement-card fade-in">
+                        <img src="/images/0228-06.png" alt="社内業務の生成AI活用ワークショップ" style="width:200px; min-width:200px; object-fit:cover; flex-shrink:0;">
+                        <div class="achievement-content">
+                            <span class="achievement-tag"
+                                style="background-color: var(--color-bg-white); border: 1px solid var(--color-accent-ai-dark); color: var(--color-text-main);">AI支援</span>
+                            <h3 class="achievement-title">社内業務の生成AI活用ワークショップ</h3>
+                            <p class="achievement-desc">
+                                生成AIの基礎知識から、日々の業務に直結するプロンプトの作成方法までをハンズオンで指導。社内導入の最初の壁を取り払うサポートを行いました。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="achievement-card fade-in">
+                        <img src="/images/0228-07.png" alt="予約管理・顧客管理システムの開発" style="width:200px; min-width:200px; object-fit:cover; flex-shrink:0;">
+                        <div class="achievement-content">
+                            <span class="achievement-tag">システム開発</span>
+                            <h3 class="achievement-title">予約管理・顧客管理システムの開発</h3>
+                            <p class="achievement-desc">
+                                紙やエクセルで行っていたアナログな管理業務をクラウドシステム化。スタッフの事務作業時間を大幅に削減し、本業に集中できる環境を構築しました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Fields -->
+        <section class="section section-light">
+            <div class="container fade-in">
+                <h2 class="h2">対応可能な主要分野</h2>
+
+                <div class="fields-grid">
+                    <a class="field-item" href="/fields/corporate-site.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>コーポレートサイト制作</span>
+                    </a>
+                    <a class="field-item" href="/fields/landing-page.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>ランディングページ制作</span>
+                    </a>
+                    <a class="field-item" href="/fields/owned-media.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>オウンドメディア構築</span>
+                    </a>
+                    <a class="field-item" href="/fields/web-system.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Webシステム設計・開発</span>
+                    </a>
+                    <a class="field-item" href="/fields/ai-consulting.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>生成AI導入コンサルティング</span>
+                    </a>
+                    <a class="field-item" href="/fields/web-marketing.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Web広告運用・SEO対策</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="global-cta fade-in">
+            <div class="container">
+                <h2 class="h2">プロジェクトについてのご相談</h2>
+                <p>掲載されていない分野のシステム開発やデザイン制作についても、まずはお気軽にご相談ください。</p>
+                <a href="/contact.html" class="btn btn-outline"
+                    style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

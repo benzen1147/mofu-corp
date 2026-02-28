@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>ランディングページ制作 | 合同会社mofu</title>
+    <meta name="description" content="合同会社mofuのランディングページ制作。CVRを高め、申し込み・問い合わせにつながるLPを制作します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        section.section {
+            padding: var(--space-md) 0 var(--space-2xl);
+        }
+
+        .pain-block {
+            background-color: var(--color-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid var(--color-border);
+            margin-bottom: var(--space-lg);
+        }
+
+        .pain-block h2 {
+            font-size: 1.5rem;
+            color: var(--color-primary-dark);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+
+        .pain-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pain-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--color-text-main);
+        }
+
+        .pain-list li::before {
+            content: '▶';
+            color: var(--color-primary);
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .solution-block {
+            background-color: var(--color-bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .solution-block h2 {
+            font-size: 1.5rem;
+            color: var(--color-primary-dark);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+
+        .solution-block p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--color-text-main);
+            margin-bottom: var(--space-md);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: var(--space-sm);
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 600;
+            color: var(--color-text-main);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--color-primary-dark);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <common-header></common-header>
+
+    <main>
+        <div class="page-header fade-in">
+            <div class="container">
+                <h1 class="h1" style="margin-bottom: 8px;">ランディングページ制作</h1>
+                <p class="text-muted text-lg">Landing Page</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+
+                <div class="pain-block">
+                    <h2>こんなことに困っていませんか？</h2>
+                    <ul class="pain-list">
+                        <li>新しいサービス・商品を立ち上げたが、認知が広がらず申し込みが伸び悩んでいる</li>
+                        <li>Web広告を出稿しているのに、クリック後の離脱が多くコンバージョンにつながらない</li>
+                        <li>競合他社のLPと比べると、自社サービスの魅力が十分に伝わっていない気がする</li>
+                    </ul>
+                </div>
+
+                <div class="solution-block">
+                    <h2>合同会社mofuにできること</h2>
+                    <p>
+                        潜在顧客の「悩み」と「欲求」を徹底的に分析し、読み進めるうちに自然と申し込み・問い合わせへと誘導できるランディングページを制作します。キャッチコピーから構成・デザイン・CTAボタンの配置まで、CVR（コンバージョン率）を高める設計を追求。Web広告との連携を意識したLPで、広告費の費用対効果を最大化します。
+                    </p>
+                    <ul class="feature-list">
+                        <li>ターゲット分析・訴求軸の設計</li>
+                        <li>高CVRを目指したコピー・レイアウト設計</li>
+                        <li>スマートフォン最適化対応</li>
+                        <li>公開後のA/Bテストを想定した改善提案</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="global-cta fade-in">
+            <div class="container">
+                <h2 class="h2">まずはお気軽にご相談ください</h2>
+                <p>ご相談は<a href="/contact.html" style="color:#fff; text-decoration:underline;">お問い合わせ</a>ページから承っております。費用・納期のご質問だけでも歓迎です。</p>
+                <a href="/contact.html" class="btn btn-outline"
+                    style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>料金プラン | 合同会社mofu</title>
+    <meta name="description" content="合同会社mofuの料金プラン。Webサイト制作・Webマーケティング・システム開発・AI活用支援の目安料金をご確認いただけます。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        section.section {
+            padding: var(--space-md) 0 var(--space-2xl);
+        }
+
+        .pricing-note {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto var(--space-xl);
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .pricing-service {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .pricing-service:last-child {
+            margin-bottom: 0;
+        }
+
+        .pricing-service-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-primary-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .pricing-card {
+            background-color: var(--color-bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 20px rgba(221, 106, 40, 0.15);
+        }
+
+        .pricing-tier {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .pricing-card.featured .pricing-tier {
+            background-color: var(--color-primary);
+            color: #fff;
+        }
+
+        .pricing-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+            margin-bottom: 4px;
+        }
+
+        .pricing-price::after {
+            content: '（税別）';
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+            margin-left: 4px;
+        }
+
+        .pricing-price-sub {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-sm);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-sm) 0 0;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            font-size: 0.9rem;
+            color: var(--color-text-main);
+            padding: 7px 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--color-primary);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-weight: 700;
+        }
+
+        .pricing-option {
+            margin-top: var(--space-sm);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <!-- Page Header -->
+        <div class="page-header fade-in">
+            <div class="container">
+                <h1 class="h1" style="margin-bottom: 8px;">料金プラン</h1>
+                <p class="text-muted text-lg">Pricing</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+
+                <p class="pricing-note">
+                    以下はご参考価格です。規模・要件・納期により変動いたします。<br>
+                    詳細なお見積りはお気軽にお問い合わせください。
+                </p>
+
+                <!-- 01. Web制作 -->
+                <div class="pricing-service">
+                    <h3 class="pricing-service-title">01. Webサイト制作・運用</h3>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <span class="pricing-tier">ライト</span>
+                            <div class="pricing-price">150,000円〜</div>
+                            <div class="pricing-price-sub">LP・5ページ以内の小規模サイト</div>
+                            <ul class="pricing-features">
+                                <li>ランディングページ・小規模サイト</li>
+                                <li>スマートフォン対応</li>
+                                <li>SEO基本設定</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card featured">
+                            <span class="pricing-tier">スタンダード</span>
+                            <div class="pricing-price">350,000円〜</div>
+                            <div class="pricing-price-sub">コーポレートサイト（10〜15ページ）</div>
+                            <ul class="pricing-features">
+                                <li>コーポレートサイト・採用サイト</li>
+                                <li>CMS（WordPress等）導入</li>
+                                <li>SEO対策・アクセス解析設定</li>
+                                <li>公開後1ヶ月サポート付き</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <span class="pricing-tier">プレミアム</span>
+                            <div class="pricing-price">700,000円〜</div>
+                            <div class="pricing-price-sub">大規模・複合サイト</div>
+                            <ul class="pricing-features">
+                                <li>採用+コーポレート等の複合サイト</li>
+                                <li>フルカスタムデザイン</li>
+                                <li>SEO・解析・広告連携</li>
+                                <li>公開後3ヶ月保守サポート付き</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="pricing-option">※ 保守・更新サポート：月額 15,000円〜</p>
+                </div>
+
+                <!-- 02. マーケティング -->
+                <div class="pricing-service">
+                    <h3 class="pricing-service-title">02. Webマーケティング支援</h3>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <span class="pricing-tier">スポット</span>
+                            <div class="pricing-price">50,000円〜</div>
+                            <div class="pricing-price-sub">単発コンサルティング</div>
+                            <ul class="pricing-features">
+                                <li>現状分析・課題整理</li>
+                                <li>改善提案レポート</li>
+                                <li>1ヶ月チャットサポート</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card featured">
+                            <span class="pricing-tier">広告運用</span>
+                            <div class="pricing-price">月額 50,000円〜</div>
+                            <div class="pricing-price-sub">+ 広告費実費</div>
+                            <ul class="pricing-features">
+                                <li>Google / Meta広告の設定・運用</li>
+                                <li>ターゲティング最適化</li>
+                                <li>月次レポート・改善提案</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <span class="pricing-tier">総合支援</span>
+                            <div class="pricing-price">月額 100,000円〜</div>
+                            <div class="pricing-price-sub">+ 広告費実費</div>
+                            <ul class="pricing-features">
+                                <li>広告運用 + SEO + SNS対策</li>
+                                <li>コンテンツ企画・ライティング</li>
+                                <li>月次MTG・戦略立案</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03. システム開発 -->
+                <div class="pricing-service">
+                    <h3 class="pricing-service-title">03. Webシステム・業務支援開発</h3>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <span class="pricing-tier">スモールスタート</span>
+                            <div class="pricing-price">300,000円〜</div>
+                            <div class="pricing-price-sub">単機能の業務ツール</div>
+                            <ul class="pricing-features">
+                                <li>顧客管理・予約管理など単機能</li>
+                                <li>要件定義・設計含む</li>
+                                <li>ノーコードツール活用</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card featured">
+                            <span class="pricing-tier">スタンダード</span>
+                            <div class="pricing-price">800,000円〜</div>
+                            <div class="pricing-price-sub">複数機能の業務システム</div>
+                            <ul class="pricing-features">
+                                <li>複数機能を統合した業務システム</li>
+                                <li>クラウド環境構築含む</li>
+                                <li>公開後3ヶ月保守付き</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <span class="pricing-tier">カスタム開発</span>
+                            <div class="pricing-price">1,500,000円〜</div>
+                            <div class="pricing-price-sub">大規模・複合システム</div>
+                            <ul class="pricing-features">
+                                <li>大規模・複合システム開発</li>
+                                <li>API連携・既存システム連携</li>
+                                <li>継続保守サポート付き</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="pricing-option">※ 保守・運用サポート：月額 30,000円〜</p>
+                </div>
+
+                <!-- 04. AI -->
+                <div class="pricing-service">
+                    <h3 class="pricing-service-title" style="border-color: var(--color-accent-ai-dark);">04. AI活用支援・業務効率化</h3>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <span class="pricing-tier" style="background-color: var(--color-accent-ai); color: var(--color-text-main);">基礎研修</span>
+                            <div class="pricing-price">100,000円〜</div>
+                            <div class="pricing-price-sub">AI導入の第一歩</div>
+                            <ul class="pricing-features">
+                                <li>AI導入ガイドライン策定</li>
+                                <li>ハンズオン研修（半日）</li>
+                                <li>プロンプト作成サポート</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card" style="border-color: #3A9E9A; box-shadow: 0 4px 20px rgba(58,158,154,0.15);">
+                            <span class="pricing-tier" style="background-color: #3A9E9A; color: #fff;">環境構築</span>
+                            <div class="pricing-price">200,000円〜</div>
+                            <div class="pricing-price-sub">セキュアなAI環境の整備</div>
+                            <ul class="pricing-features">
+                                <li>社内専用AI環境の構築</li>
+                                <li>情報漏洩対策・ルール策定</li>
+                                <li>社員向け研修セット</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <span class="pricing-tier" style="background-color: var(--color-accent-ai); color: var(--color-text-main);">継続顧問</span>
+                            <div class="pricing-price">月額 50,000円〜</div>
+                            <div class="pricing-price-sub">継続的な伴走サポート</div>
+                            <ul class="pricing-features">
+                                <li>月1回のMTG（オンライン）</li>
+                                <li>随時チャット相談対応</li>
+                                <li>AI活用施策の企画・改善提案</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="pricing-option">※ LLMを活用した自動化ツール開発：300,000円〜（要件により変動）</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="global-cta fade-in">
+            <div class="container">
+                <h2 class="h2">まずはお気軽にご相談ください</h2>
+                <p>ご予算・ご要望に合わせた最適なプランをご提案いたします。</p>
+                <a href="/contact.html" class="btn btn-outline"
+                    style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

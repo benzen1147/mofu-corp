@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>運営体制 | 合同会社mofu</title>
+    <meta name="description" content="合同会社mofuの運営体制。少数精鋭だからこそできる、お客様に深く寄り添う柔軟で高品質なサポート体制をご紹介します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        section.section {
+            padding-top: var(--space-md);
+        }
+
+        /* サブタイトルの右寄り・中央寄せ修正 */
+        .team-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .team-intro .h2 {
+            display: block;
+            left: auto;
+            transform: none;
+            text-align: center;
+        }
+
+        .team-intro .h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .team-intro p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+        }
+
+        /* 2カードを統一デザインに */
+        .structure-chart {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: var(--space-md);
+            margin-bottom: var(--space-2xl);
+            position: relative;
+        }
+
+        .structure-node {
+            background-color: var(--color-secondary);
+            border: 2px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            width: 280px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            z-index: 2;
+        }
+
+        .node-title {
+            font-size: 1.25rem;
+            color: var(--color-primary-dark);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .node-desc {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .structure-connector {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 2px;
+            background-color: var(--color-primary-light);
+            z-index: 1;
+        }
+
+        /* 4枚カードを縦1列・横長に */
+        .merit-section {
+            background-color: var(--color-bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .merit-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .merit-card {
+            background-color: var(--color-secondary);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+        }
+
+        .merit-card-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background-color: var(--color-primary-light);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary-dark);
+        }
+
+        .merit-card-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .merit-card-body h3 {
+            color: var(--color-primary-dark);
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .merit-card-body p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .structure-chart {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-lg);
+            }
+
+            .structure-connector {
+                width: 2px;
+                height: 60%;
+            }
+
+            .merit-section {
+                padding: var(--space-lg) var(--space-md);
+            }
+
+            .merit-card {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <!-- Page Header -->
+        <div class="page-header fade-in">
+            <div class="container">
+                <h1 class="h1" style="margin-bottom: 8px;">運営体制</h1>
+                <p class="text-muted text-lg">Our Team Structure</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+                <div class="team-intro">
+                    <h2 class="h2">少数精鋭だからこそ、深く寄り添える。</h2>
+                    <p style="margin-top: var(--space-md);">
+                        合同会社mofuは、代表と社内スタッフ、そして信頼できる各分野の専門パートナーからなる柔軟なチーム体制で案件に取り組みます。<br>
+                        大企業のような無機質な分業制ではなく、一人ひとりのお客様に対して顔の見える距離感で、温かく密接なコミュニケーションを大切にしています。
+                    </p>
+                </div>
+
+                <!-- Structure Chart -->
+                <div class="structure-chart fade-in">
+                    <div class="structure-connector"></div>
+
+                    <div class="structure-node structure-node-core">
+                        <div
+                            style="background-color: var(--color-primary-light); width: 64px; height: 64px; border-radius: var(--radius-full); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-primary-dark)" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="node-title">コアチーム</div>
+                        <div class="node-desc">代表 梶原 + 従業員1名</div>
+                        <p
+                            style="margin-top: 12px; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);">
+                            要件定義・AIコンサルティング・全体進行管理と品質担保を行います。
+                        </p>
+                    </div>
+
+                    <div class="structure-node">
+                        <div
+                            style="background-color: var(--color-primary-light); width: 64px; height: 64px; border-radius: var(--radius-full); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-dark)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="node-title">専門パートナー</div>
+                        <div class="node-desc">外部パートナー 4名</div>
+                        <p style="margin-top: 12px; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);">
+                            デザイン・開発・マーケティング等の専門領域を強力にサポートします。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Merits -->
+                <div class="merit-section fade-in">
+                    <h2 class="h3 text-center" style="margin-bottom: var(--space-md);">この体制が選ばれる理由</h2>
+                    <div class="merit-grid">
+                        <div class="merit-card">
+                            <div class="merit-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="merit-card-body">
+                                <h3>責任ある品質管理と安心感</h3>
+                                <p>お客様とのコミュニケーションや要件定義、納品前の品質チェックはすべて代表を中心としたコアチームが責任を持って行い、認識のズレを防ぎます。</p>
+                            </div>
+                        </div>
+                        <div class="merit-card">
+                            <div class="merit-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="merit-card-body">
+                                <h3>柔軟で迅速な対応力</h3>
+                                <p>大規模な会社にありがちな社内の複雑な承認フローがないため、急な変更やご要望に対しても、スピーディかつ柔軟に対応することが可能です。</p>
+                            </div>
+                        </div>
+                        <div class="merit-card">
+                            <div class="merit-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <div class="merit-card-body">
+                                <h3>専門家アサインによる高水準の技術</h3>
+                                <p>プロジェクトの性質に合わせて最適な外部プロフェッショナルを編成することで、常に最新かつ高品質なクリエイティブ・技術力を提供します。</p>
+                            </div>
+                        </div>
+                        <div class="merit-card">
+                            <div class="merit-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                            </div>
+                            <div class="merit-card-body">
+                                <h3>コストパフォーマンスの最適化</h3>
+                                <p>過剰なオフィスや余分な人員を抱えないため、無駄な固定費を削減でき、その分お客様に還元する形での適正価格を実現しています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="global-cta fade-in">
+            <div class="container">
+                <h2 class="h2">プロジェクトを一緒に進めませんか？</h2>
+                <p>柔軟な体制で、お客様の課題解決にコミットします。まずはご相談ください。</p>
+                <a href="/contact.html" class="btn btn-outline"
+                    style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

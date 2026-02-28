@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>お問い合わせ | 合同会社mofu</title>
+    <meta name="description" content="合同会社mofuへのお問い合わせはこちらから。Web制作やAI活用など、ビジネスに関するご相談を承ります。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--space-xl);
+        }
+
+        .contact-info-card {
+            background-color: var(--color-bg-white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: calc(var(--header-height) + var(--space-lg));
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.25rem;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: 12px;
+        }
+
+        .info-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .info-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: 4px;
+        }
+
+        .info-group p {
+            font-weight: 600;
+            color: var(--color-text-main);
+        }
+
+        .contact-form-card {
+            background-color: var(--color-bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--color-text-main);
+        }
+
+        .form-label span {
+            color: #d9534f;
+            font-size: 0.85rem;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-family);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            background-color: var(--color-secondary);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary-dark);
+            box-shadow: 0 0 0 3px var(--color-primary-light);
+            background-color: var(--color-bg-white);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .privacy-check {
+            margin: var(--space-lg) 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .privacy-check label {
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .privacy-check a {
+            text-decoration: underline;
+            color: var(--color-primary-dark);
+        }
+
+        .privacy-check input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-primary-dark);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrap {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .contact-info-card {
+                position: static;
+            }
+
+            .contact-form-card {
+                padding: var(--space-lg) var(--space-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <!-- Page Header -->
+        <div class="page-header fade-in">
+            <div class="container">
+                <h1 class="h1" style="margin-bottom: 8px;">お問い合わせ</h1>
+                <p class="text-muted text-lg">Contact Us</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+                <p class="text-center" style="margin-bottom: var(--space-xl); font-size: 1.125rem; line-height: 1.8;">
+                    Webサイト制作、システム開発、AI活用に関するご相談など、<br>
+                    どうぞお気軽にお問い合わせください。
+                </p>
+
+                <div class="contact-wrap">
+                    <!-- Contact Info Sidebar -->
+                    <div>
+                        <div class="contact-info-card">
+                            <h3>連絡先情報</h3>
+                            <div class="info-group">
+                                <label>会社名</label>
+                                <p>合同会社mofu</p>
+                            </div>
+                            <div class="info-group">
+                                <label>所在地</label>
+                                <p>〒563-0043<br>大阪府池田市神田1-1-12-A</p>
+                            </div>
+                            <div class="info-group">
+                                <label>電話番号</label>
+                                <p>070-8977-8452</p>
+                            </div>
+                            <div class="info-group">
+                                <label>メールアドレス</label>
+                                <p>info@mofu-llc.co.jp</p>
+                            </div>
+                            <div class="info-group"
+                                style="margin-top: var(--space-lg); font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
+                                ※お電話でのご対応は平日10:00〜18:00となります。<br>
+                                ※営業・勧誘等のご連絡はお断りしております。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <div class="contact-form-card">
+                            <form action="#" method="POST"
+                                onsubmit="event.preventDefault(); alert('デモ画面のため、送信はされません。');">
+                                <div class="form-group">
+                                    <label class="form-label" for="company">貴社名</label>
+                                    <input type="text" id="company" name="company" class="form-control"
+                                        placeholder="例：株式会社○○">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="name">お名前 <span>※必須</span></label>
+                                    <input type="text" id="name" name="name" class="form-control" required
+                                        placeholder="例：山田 太郎">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="email">メールアドレス <span>※必須</span></label>
+                                    <input type="email" id="email" name="email" class="form-control" required
+                                        placeholder="例：info@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">電話番号</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control"
+                                        placeholder="例：03-1234-5678">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="subject">お問い合わせの種別</label>
+                                    <select id="subject" name="subject" class="form-control">
+                                        <option value="">選択してください</option>
+                                        <option value="web">Webサイト制作について</option>
+                                        <option value="marketing">Webマーケティングについて</option>
+                                        <option value="system">システム開発について</option>
+                                        <option value="ai">AI活用支援について</option>
+                                        <option value="other">その他・総合的なご相談</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="message">お問い合わせ内容 <span>※必須</span></label>
+                                    <textarea id="message" name="message" class="form-control" required
+                                        placeholder="ご相談内容を詳しくご記入ください。"></textarea>
+                                </div>
+
+                                <div class="privacy-check text-center">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <label for="privacy"><a href="/privacy.html"
+                                            target="_blank">プライバシーポリシー</a>に同意する</label>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary"
+                                        style="padding: 16px 64px; font-size: 1.125rem;">送信する</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Webサイトのリニューアル時期の目安と失敗しないポイント | 合同会社mofu</title>
+    <meta name="description" content="今の自社サイト、古くなっていませんか？Webサイトのリニューアルを検討すべきタイミングと、成功に導くためのポイントを解説します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .article-header {
+            background-color: var(--color-primary-light);
+            padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-md);
+        }
+
+        section.section {
+            padding-top: var(--space-md);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: var(--space-md);
+            justify-content: center;
+        }
+
+        .article-date {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .article-category {
+            background-color: var(--color-primary-dark);
+            color: var(--color-bg-white);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.25rem;
+            color: var(--color-text-main);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: var(--space-md) auto 0;
+            background-color: var(--color-bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .article-body h2 {
+            font-size: 1.75rem;
+            color: var(--color-primary-dark);
+            margin: var(--space-lg) 0 var(--space-md);
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--color-primary-light);
+            letter-spacing: 0.02em;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 1.35rem;
+            margin: var(--space-md) 0 var(--space-sm);
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+
+        .article-body p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            margin-bottom: var(--space-md);
+            color: var(--color-text-main);
+        }
+
+        .article-body li {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 24px;
+            color: var(--color-text-main);
+        }
+
+        .article-body img {
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+            width: 100%;
+        }
+
+        .article-body ul {
+            margin-left: 24px;
+            margin-bottom: 24px;
+        }
+
+        .article-nav {
+            max-width: 760px;
+            margin: var(--space-xl) auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.5rem;
+            }
+
+            .article-body {
+                padding: var(--space-lg) var(--space-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <common-header></common-header>
+    <main>
+        <div class="article-header fade-in">
+            <div class="container">
+                <div class="article-meta">
+                    <span class="article-date">2026.02.23</span>
+                    <span class="article-category">Web制作</span>
+                </div>
+                <h1 class="article-title">Webサイトのリニューアル時期の目安と<br>失敗しないポイント</h1>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container fade-in">
+                <div class="article-body">
+                    <h2>リニューアルを検討すべき「3つの危険サイン」</h2>
+                    <p>
+                        「自社のWebサイト、最後に更新したのはいつだろうか？」<br>
+                        もし、その答えが3年以上前であれば、要注意かもしれません。一般的に、Webサイトの寿命（リニューアルのサイクル）は「3〜5年」と言われています。IT技術の進歩やセキュリティ要件のアップデート、そして何よりユーザーが好むデザイントレンドの変化が非常に速いためです。
+                    </p>
+                    <p>
+                        しかし、単なる経過年数だけでなく、自社のサイトに以下のような「サイン」が出ている場合は、今すぐリニューアルの検討を始めることを強く推奨します。
+                    </p>
+                    <ul>
+                        <li><strong>スマートフォンで見づらい（レスポンシブ非対応）</strong>：<br>現在、BtoB・BtoC問わず、多くのユーザーがスマートフォンで情報収集を行います。スマホで見たときに文字が小さくて拡大しないと読めない、ボタンが押しづらいといった状態は、お客様を門前払いしているのと同じです。
+                        </li>
+                        <li><strong>古い情報が放置され、誰も更新できない</strong>：<br>「お知らせが数年前で止まっている」「退職した社員がまだスタッフ紹介に載っている」。これは企業の信頼感を大きく損ないます。「更新を一握りの担当者や制作会社にしか依存できず、気付けば放置されている」という運用体制の限界を示すサインです。
+                        </li>
+                        <li><strong>「保護されていない通信」と警告が出る</strong>：<br>URLが「http://」で始まっている古い規格のサイトは、現在のブラウザ（ChromeやSafariなど）では警告が表示されます。セキュリティ意識が低い企業とみなされ、ビジネス上の大きなマイナスとなります。
+                        </li>
+                    </ul>
+
+                    <h2>失敗しないための「目的とターゲットの徹底的な明確化」</h2>
+                    <p>
+                        リニューアルにおいて最もありがちで、かつ最も危険な失敗があります。それは、「とりあえず今のデザインが古いから、今風の綺麗でおしゃれなデザインにしてほしい」という、ふわっとした理由だけで制作会社に丸投げしてしまうことです。
+                    </p>
+                    <p>
+                        「見た目を綺麗にする」ことは手段であって、目的ではありません。合同会社mofuでは、サイト制作に入る前の初回のヒアリング時間を何よりも大切にし、必ず「このサイトを通して、誰に、どんな行動を起こさせたいのか？」を徹底的に言語化していただきます。
+                    </p>
+                    <p>
+                        ・<strong>採用強化</strong>：求職者（学生や転職希望者）に社風を伝え、エントリー数を増やしたいのか。<br>
+                        ・<strong>リード獲得</strong>：新規の取引先となる企業担当者からの、問い合わせや資料請求を獲得したいのか。<br>
+                        ・<strong>名刺代わりの信頼証明</strong>：銀行での法人口座開設や、新規取引時の与信調査をスムーズにパスするための「カッチリとした信頼感」があれば十分なのか。
+                    </p>
+                    <p>
+                        目的が違えば、目立たせるべきボタンの位置も、伝えるべきメッセージのトーンも、全体のデザインの方向性も180度変わってきます。ここをブレさせないことが、リニューアル成功の絶対条件です。
+                    </p>
+
+                    <h2>作って終わりではない。公開後の「定期的な見直し」が真の鍵</h2>
+                    <p>
+                        Webサイトは「家」や「店舗」と同じです。立派な建物を建てた（公開した）からといって、お客様が自動的に押し寄せて、すべてがうまくいくわけではありません。そこからどう運用し、改善していくかが本当の勝負です。
+                    </p>
+                    <p>
+                        公開後は、Google Analytics等のアクセス解析ツールを用いてユーザーの実際の動きをデータとして観察します。<br>
+                        「なぜ、お問い合わせフォームのページまで来ているのに、入力せずに離脱する人がこんなに多いのだろう？ 項目が多すぎて面倒になっているのではないか？」<br>
+                        「ブログ記事の中で、この記事だけ異常に読まれている。このテーマにニーズがあるから、関連サービスを押し出してみよう」<br>
+                        こうした地道な仮説検証と改善（PDCA）を回し続ける運用体制があって初めて、Webサイトは「ただそこにあるだけのカタログ」から「24時間休まず働く優秀な営業マン」へと進化します。mofuでは、作って終わりの関係ではなく、公開後の育成フェーズまでしっかりと伴走いたします。
+                    </p>
+                </div>
+                <div class="article-nav">
+                    <a href="/blog/article-3.html" class="btn btn-outline" style="padding: 10px 24px;">&larr; 前の記事</a>
+                    <a href="/blog/index.html" class="btn btn-outline" style="padding: 10px 24px;">一覧へ戻る</a>
+                    <a href="/blog/article-5.html" class="btn btn-primary" style="padding: 10px 24px;">次の記事 &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

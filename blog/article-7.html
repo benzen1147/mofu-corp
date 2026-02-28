@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>社内システム開発で、紙やエクセルの業務効率を劇的に改善する手法 | 合同会社mofu</title>
+    <meta name="description" content="「脱エクセル」「ペーパーレス」が進まない企業様へ。スモールスタートで始める社内システム開発のステップを解説します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .article-header {
+            background-color: var(--color-primary-light);
+            padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-md);
+        }
+
+        section.section {
+            padding-top: var(--space-md);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: var(--space-md);
+            justify-content: center;
+        }
+
+        .article-date {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .article-category {
+            background-color: var(--color-primary-dark);
+            color: var(--color-bg-white);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.25rem;
+            color: var(--color-text-main);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: var(--space-md) auto 0;
+            background-color: var(--color-bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .article-body h2 {
+            font-size: 1.75rem;
+            color: var(--color-primary-dark);
+            margin: var(--space-lg) 0 var(--space-md);
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--color-primary-light);
+            letter-spacing: 0.02em;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 1.35rem;
+            margin: var(--space-md) 0 var(--space-sm);
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+
+        .article-body p,
+        .article-body li {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            margin-bottom: var(--space-md);
+            color: var(--color-text-main);
+        }
+
+        .article-body img {
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+            width: 100%;
+        }
+
+        .article-body ul {
+            margin-left: 24px;
+            margin-bottom: 24px;
+        }
+
+        .article-nav {
+            max-width: 760px;
+            margin: var(--space-xl) auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.5rem;
+            }
+
+            .article-body {
+                padding: var(--space-lg) var(--space-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <common-header></common-header>
+    <main>
+        <div class="article-header fade-in">
+            <div class="container">
+                <div class="article-meta">
+                    <span class="article-date">2026.02.20</span>
+                    <span class="article-category">システム開発</span>
+                </div>
+                <h1 class="article-title">社内システム開発で、<br>紙やエクセルの業務効率を劇的に改善する手法</h1>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container fade-in">
+                <div class="article-body">
+                    <h2>無限に増殖する「ファイルの上書き問題」と見えないストレス</h2>
+                    <p>
+                        「共有フォルダにある顧客管理のエクセル（Excel）を複数人で同時に編集してしまい、誰かが上書きしてしまって今日の分の入力データが消えてしまった」<br>
+                        「フォルダの中に、“【最新】顧客リスト.xlsx”“顧客リスト_修正版.xlsx”“顧客リスト_最終の最終.xlsx”という似たようなファイルが乱立しており、結局どれが本当の最新データなのか、作成した本人に聞かないとわからない」
+                    </p>
+                    <p>
+                        このような「あるある」の光景は、業種や規模を問わず、多くの日本の中小企業のバックオフィスで日々繰り広げられています。一見すると「ちょっとした手間の増大」「社内コミュニケーションの問題」で片付けられがちですが、これらは目に見えない形で従業員の時間を奪い、仕事へのモチベーションを削ぐ、多大な「隠れたコスト」となっています。<br>
+                        さらに、USBメモリでのデータ持ち出しによる紛失や、退職者のパソコンの中にしか属人化された業務データがないといった、セキュリティ面や事業継続性の観点からも、脱紙・脱エクセルは急務と言えます。
+                    </p>
+
+                    <h2>大きな失敗を避けるには、小さな課題から「小さくクラウド化」する</h2>
+                    <p>
+                        こうした課題を解決しようと一念発起し、社内システムの開発や導入を検討する企業様もいらっしゃいます。しかし、ここでやりがちなのが「どうせなら全部の業務をシステム化しよう」と、大企業の真似をして数千万円規模の「統合基幹システム（ERP）」をいきなり導入しようとする失敗です。
+                    </p>
+                    <p>
+                        現場の社員にとって、長年慣れ親しんだエクセルや紙の運用ルールが、ある日突然、見ず知らずの巨大なシステムにすべて置き換わることは大きなストレスを伴います。結果として「入力項目が多すぎて面倒くさい」「使い方がわからない」と誰も使わなくなり、結局裏でこっそりエクセルが使われ続ける……という悲劇は後を絶ちません。
+                    </p>
+                    <p>
+                        社内システム導入において最も確実で成功率が高いのは、<strong>もっともペイン（悩みや痛み）の大きい「たった1つの業務」に絞って、小さくWebシステム化（クラウド化）する「スモールスタート」</strong>のアプローチです。<br>
+                        まずは「全員のタイムカード（勤怠管理）の集計業務だけ」「属人化しやすい営業先の顧客名簿の管理と検索だけ」「毎月の請求書・見積書のPDF発行機能だけ」といった単一の機能から始めます。そこで「確かにエクセルより楽になった！」「どこからでもスマホで最新データが見れて便利だ」という小さな成功体験と納得感を現場に生み出し、そこから少しずつ他の機能（経費精算や在庫管理など）を拡張していくのが、失敗しない鉄則です。
+                    </p>
+
+                    <h2>「ノーコード / ローコードツール」の活用でコストを抑える</h2>
+                    <p>
+                        また、システムの開発手法もここ数年で劇的に進化しました。以前は、要望に合わせて完全にゼロからプログラミング言語を書いてシステムを作る「スクラッチ開発」が主流で、どうしても数百万円以上の初期費用と長い開発期間（半年〜1年）が必要でした。
+                    </p>
+                    <p>
+                        しかし近年では、「kintone（キントーン）」などに代表されるような「ノーコード /
+                        ローコードツール」を活用することが主流になりつつあります。これらは、あらかじめ用意されたレゴブロックのような部品（画面やデータベース機能）を画面上でマウス操作で組み合わせていくことで、プログラミングをほとんど行わずに、独自の業務システムを素早く構築できる仕組みです。<br>
+                        これを適切に活用することで、従来のスクラッチ開発と比べて数分の一のコストと期間で、自社専用のシステムを立ち上げることが可能になります。
+                    </p>
+                    <p>
+                        合同会社mofuでは、お客様のご予算、事業規模、そして現場のITリテラシーを丁寧にヒアリングいたします。その上で、完全にフルオーダーメイドで開発すべきコア部分と、既存のノーコードツールを組み合わせて安価に素早く構築すべき部分をプロの目線で見極め、御社の業務にじんわりと馴染む「やさしい」システム設計と導入支援をご提案いたします。無理のないDX（デジタルトランスフォーメーション）を、一緒に始めませんか？
+                    </p>
+                </div>
+                <div class="article-nav">
+                    <a href="/blog/article-6.html" class="btn btn-outline" style="padding: 10px 24px;">&larr; 前の記事</a>
+                    <a href="/blog/index.html" class="btn btn-outline" style="padding: 10px 24px;">一覧へ戻る</a>
+                    <div></div> <!-- Spacer for next -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
