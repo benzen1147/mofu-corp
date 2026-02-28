@@ -343,47 +343,109 @@
         }
 
         @media (max-width: 768px) {
+            /* 上の余白を詰めてアイコンが最初から見えるように */
+            section.section {
+                padding: var(--space-sm) 0 var(--space-xl);
+            }
+
+            .page-header {
+                padding-bottom: 4px;
+            }
+
             .common-promise {
                 padding: var(--space-md);
                 gap: var(--space-sm);
+                margin-bottom: var(--space-md);
             }
 
-            /* ── カルーセル：スタンダードが中央・大きく、左右がちらっと見える ── */
+            .pricing-note {
+                margin-bottom: var(--space-md);
+                padding: var(--space-sm) var(--space-md);
+            }
+
+            /* 3カラムコンパクトグリッド（事業内容ページと同じ） */
             .pricing-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-                gap: 10px;
-                padding: 4px 0 20px;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+                overflow-x: visible;
             }
 
-            .pricing-grid::-webkit-scrollbar {
-                display: none;
-            }
-
-            /* 通常カード：左右にちらっと見える幅 */
             .pricing-grid .pricing-card {
-                min-width: 62vw;
-                flex-shrink: 0;
-                scroll-snap-align: center;
+                width: auto;
+                flex: none;
+                scroll-snap-align: unset;
             }
 
-            /* フィーチャーカード：メインとして大きく表示 */
-            .pricing-grid .pricing-card.featured,
-            .pricing-grid .pricing-card.ai-featured {
-                min-width: 72vw;
+            .card-top,
+            .card-body,
+            .card-foot {
+                padding: 8px 6px;
+            }
+
+            .pricing-tier {
+                font-size: 0.62rem;
+                padding: 3px 6px;
+                margin-bottom: 4px;
             }
 
             .pricing-plan-name {
-                font-size: 1rem;
+                font-size: 0.72rem;
+                margin-bottom: 4px;
+            }
+
+            .pricing-for {
+                font-size: 0.6rem;
+                line-height: 1.4;
+            }
+
+            .pricing-features li {
+                font-size: 0.6rem;
+                padding: 3px 0;
+                gap: 4px;
+            }
+
+            .check-icon {
+                width: 12px;
+                height: 12px;
+                min-width: 12px;
+            }
+
+            .check-icon svg {
+                width: 7px;
+                height: 7px;
+            }
+
+            .pricing-label {
+                font-size: 0.6rem;
             }
 
             .pricing-price {
-                font-size: 1.3rem;
+                font-size: 0.82rem;
+                line-height: 1.3;
+            }
+
+            .pricing-price-tax {
+                font-size: 0.56rem;
+                margin-left: 2px;
+            }
+
+            .pricing-price-sub {
+                font-size: 0.58rem;
+                margin-top: 2px;
+            }
+
+            .pricing-price-wrap {
+                margin-bottom: 6px;
+            }
+
+            .card-cta {
+                font-size: 0.6rem;
+                padding: 6px 0;
+            }
+
+            .pricing-option {
+                font-size: 0.62rem;
             }
         }
 
@@ -933,28 +995,6 @@
 
     <common-footer></common-footer>
     <script src="/js/main.js"></script>
-    <script>
-        (function () {
-            function scrollToFeatured() {
-                if (window.innerWidth > 768) return;
-                document.querySelectorAll('.pricing-grid').forEach(function (grid) {
-                    var featured =
-                        grid.querySelector('.pricing-card.featured') ||
-                        grid.querySelector('.pricing-card.ai-featured') ||
-                        grid.querySelector('.pricing-card:nth-child(3)');
-                    if (!featured) return;
-                    var scrollLeft =
-                        featured.offsetLeft - (grid.clientWidth - featured.offsetWidth) / 2;
-                    grid.scrollLeft = Math.max(0, scrollLeft);
-                });
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', scrollToFeatured);
-            } else {
-                scrollToFeatured();
-            }
-        })();
-    </script>
 </body>
 
 </html>
