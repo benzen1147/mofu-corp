@@ -11,15 +11,19 @@
     <link rel="stylesheet" href="/css/style.css">
     <style>
         section.section {
-            padding: var(--space-md) 0 var(--space-2xl);
+            padding: 8px 0 var(--space-2xl);
+        }
+
+        .page-header {
+            padding-bottom: 8px;
         }
 
         .pricing-note {
             text-align: center;
             max-width: 640px;
-            margin: 0 auto var(--space-xl);
+            margin: 0 auto var(--space-md);
             color: var(--color-text-muted);
-            font-size: 1.05rem;
+            font-size: 0.75rem;
             line-height: 1.8;
         }
 
@@ -136,6 +140,45 @@
             color: var(--color-text-muted);
         }
 
+        @media (max-width: 768px) {
+            .pricing-price {
+                font-size: 0.9rem;
+            }
+
+            .pricing-price::after {
+                font-size: 0.62rem;
+                margin-left: 2px;
+            }
+
+            .pricing-price-sub {
+                font-size: 0.6rem;
+                margin-bottom: 6px;
+            }
+
+            .pricing-features {
+                margin-top: 6px;
+            }
+
+            .pricing-features li {
+                font-size: 0.62rem;
+                padding: 4px 0;
+                gap: 4px;
+            }
+
+            .pricing-features li::before {
+                font-size: 0.62rem;
+                margin-top: 1px;
+            }
+
+            .pricing-tier {
+                font-size: 0.7rem;
+            }
+
+            .pricing-option {
+                font-size: 0.65rem;
+            }
+        }
+
     </style>
 </head>
 
@@ -156,8 +199,7 @@
             <div class="container fade-in">
 
                 <p class="pricing-note">
-                    以下はご参考価格です。規模・要件・納期により変動いたします。<br>
-                    詳細なお見積りはお気軽にお問い合わせください。
+                    以下はご参考価格です。規模・要件・納期により変動いたします。詳細なお見積りはお気軽にお問い合わせください。
                 </p>
 
                 <!-- 01. Web制作 -->
@@ -197,7 +239,7 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="pricing-option">※ 保守・更新サポート：月額 15,000円〜</p>
+                    <p class="pricing-option">※ 保守・更新サポート：月額 15,000円〜<small style="color:var(--color-text-muted);">（税別）</small></p>
                 </div>
 
                 <!-- 02. マーケティング -->
@@ -272,7 +314,7 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="pricing-option">※ 保守・運用サポート：月額 30,000円〜</p>
+                    <p class="pricing-option">※ 保守・運用サポート：月額 30,000円〜<small style="color:var(--color-text-muted);">（税別）</small></p>
                 </div>
 
                 <!-- 04. AI -->
@@ -310,7 +352,7 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="pricing-option">※ LLMを活用した自動化ツール開発：300,000円〜（要件により変動）</p>
+                    <p class="pricing-option">※ LLMを活用した自動化ツール開発：300,000円〜<small style="color:var(--color-text-muted);">（税別）</small><br>（要件により変動）</p>
                 </div>
 
             </div>
@@ -319,7 +361,7 @@
         <!-- CTA -->
         <section class="global-cta fade-in">
             <div class="container">
-                <h2 class="h2">まずはお気軽にご相談ください</h2>
+                <h2 class="h2">まずはお気軽に<br>ご相談ください</h2>
                 <p>ご予算・ご要望に合わせた最適なプランをご提案いたします。</p>
                 <a href="/contact.html" class="btn btn-outline"
                     style="background-color: var(--color-bg-white); border-color: var(--color-bg-white);">お問い合わせフォームへ</a>

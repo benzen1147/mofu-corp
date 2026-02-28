@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Google広告（リスティング広告）で集客する仕組みと始め方 | 合同会社mofu</title>
+    <meta name="description" content="「今すぐ集客したい」を実現するGoogle広告。仕組みから予算の決め方、失敗しないための設定ポイントまでわかりやすく解説します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .article-header {
+            background-color: var(--color-primary-light);
+            padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-md);
+        }
+
+        section.section {
+            padding-top: var(--space-md);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: var(--space-md);
+            justify-content: center;
+        }
+
+        .article-date {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .article-category {
+            background-color: var(--color-primary-dark);
+            color: var(--color-bg-white);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.25rem;
+            color: var(--color-text-main);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: var(--space-md) auto 0;
+            background-color: var(--color-bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .article-body h2 {
+            font-size: 1.75rem;
+            color: var(--color-primary-dark);
+            margin: var(--space-lg) 0 var(--space-md);
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--color-primary-light);
+            letter-spacing: 0.02em;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 1.35rem;
+            margin: var(--space-md) 0 var(--space-sm);
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+
+        .article-body p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            margin-bottom: var(--space-md);
+            color: var(--color-text-main);
+        }
+
+        .article-body img {
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+            width: 100%;
+        }
+
+        .article-nav {
+            max-width: 760px;
+            margin: var(--space-xl) auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.5rem;
+            }
+
+            .article-body {
+                padding: var(--space-lg) var(--space-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <div class="article-header fade-in">
+            <div class="container">
+                <div class="article-meta">
+                    <span class="article-date">2026.02.19</span>
+                    <span class="article-category">マーケティング</span>
+                </div>
+                <h1 class="article-title">Google広告（リスティング広告）で<br>集客する仕組みと始め方</h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+                <div class="article-body">
+                    <h2>リスティング広告はなぜ「今すぐ客」に効くのか</h2>
+                    <p>
+                        GoogleやYahoo!の検索結果ページ上部に表示される「スポンサー」「広告」と書かれたリンク。これがリスティング広告（検索連動型広告）です。テレビCMやSNS広告とは根本的に異なる特徴があります。それは、「今まさにそのキーワードを検索した人」にだけ広告を表示できるという点です。
+                    </p>
+                    <p>
+                        例えば、「大阪 屋根修理 業者」と検索した人は、まさにその瞬間に屋根修理を必要としている可能性が非常に高い「今すぐ客」です。一方でテレビCMは、屋根修理が全く必要ない人にも画面を占領します。リスティング広告はニーズが顕在化した瞬間にアプローチできるため、同じ予算でも高い費用対効果が期待できます。
+                    </p>
+
+                    <h2>Google広告の基本的な仕組みとコスト</h2>
+                    <p>
+                        Google広告はオークション形式で運用されます。広告主は「どのキーワードで表示させたいか」と「1クリックあたりいくらまで払うか（入札単価）」を設定します。ユーザーが検索した際、入札単価と広告の品質スコア（広告文の関連性、ランディングページの品質など）を掛け合わせた「広告ランク」によって、表示順位と実際の支払い単価が決まります。
+                    </p>
+                    <p>
+                        重要なのは「クリックされた場合だけ費用が発生する」という課金方式（クリック課金・PPC）です。広告が表示されても、クリックされなければ一切費用はかかりません。1クリックあたりの相場は業種や競合の激しさによって大きく異なり、地方の小規模事業者向けサービスで数十円〜数百円程度、競合が激しい保険や不動産関連では1クリック数千円になることもあります。月予算は3万円〜10万円程度から効果を検証できますが、業種によってはより多くの予算が必要な場合もあります。
+                    </p>
+
+                    <h2>失敗しないための「設定の基本」</h2>
+                    <p>
+                        Google広告は「設定すれば自動的にうまくいく」ものではありません。初期設定を誤ると、関係ない検索に広告が表示されて予算を無駄に消費してしまいます。特に重要なのが「マッチタイプ」と「除外キーワード」の設定です。
+                    </p>
+                    <p>
+                        「屋根修理」というキーワードで広告を出していても、「屋根修理 DIY 自分で」という検索にも表示されてしまうと、業者を探しているのではなく自分でやろうとしている人に広告費を使うことになります。こうした無関係な検索ワードを「除外キーワード」として設定することで、予算の無駄遣いを防げます。<br>
+                        また、広告をクリックした後に到達する「ランディングページ」の品質も非常に重要です。広告文と着地先のページの内容が一致していない、問い合わせボタンがわかりにくいといった場合、クリックされても成約に繋がりません。合同会社mofuでは、広告設定から効果測定、ランディングページの改善提案まで一括してサポートいたします。
+                    </p>
+                </div>
+
+                <div class="article-nav">
+                    <a href="/blog/article-7.html" class="btn btn-outline" style="padding: 10px 24px;">&larr; 前の記事</a>
+                    <a href="/blog/index.html" class="btn btn-outline" style="padding: 10px 24px;">一覧へ戻る</a>
+                    <a href="/blog/article-12.html" class="btn btn-primary" style="padding: 10px 24px;">次の記事 &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

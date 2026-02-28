@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>中小企業のWebサイトSEO対策、まず何をすべきか | 合同会社mofu</title>
+    <meta name="description" content="「Googleで検索しても自社サイトが出てこない」そんなお悩みを持つ中小企業が最初に取り組むべきSEO対策の基本と優先順位を解説します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .article-header {
+            background-color: var(--color-primary-light);
+            padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-md);
+        }
+
+        section.section {
+            padding-top: var(--space-md);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: var(--space-md);
+            justify-content: center;
+        }
+
+        .article-date {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .article-category {
+            background-color: var(--color-primary-dark);
+            color: var(--color-bg-white);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.25rem;
+            color: var(--color-text-main);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: var(--space-md) auto 0;
+            background-color: var(--color-bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .article-body h2 {
+            font-size: 1.75rem;
+            color: var(--color-primary-dark);
+            margin: var(--space-lg) 0 var(--space-md);
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--color-primary-light);
+            letter-spacing: 0.02em;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 1.35rem;
+            margin: var(--space-md) 0 var(--space-sm);
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+
+        .article-body p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            margin-bottom: var(--space-md);
+            color: var(--color-text-main);
+        }
+
+        .article-body img {
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+            width: 100%;
+        }
+
+        .article-nav {
+            max-width: 760px;
+            margin: var(--space-xl) auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.5rem;
+            }
+
+            .article-body {
+                padding: var(--space-lg) var(--space-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <div class="article-header fade-in">
+            <div class="container">
+                <div class="article-meta">
+                    <span class="article-date">2026.02.14</span>
+                    <span class="article-category">Web制作</span>
+                </div>
+                <h1 class="article-title">中小企業のWebサイトSEO対策、<br>まず何をすべきか</h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+                <div class="article-body">
+                    <h2>「Googleで検索しても出てこない」は致命的なビジネスロス</h2>
+                    <p>
+                        「うちの会社名で検索するとサイトが出てくるが、サービス名や地域名で検索するとまったく出てこない」——こうしたお悩みは、Webサイトを持つ中小企業様の大半が抱えている現実的な課題です。
+                    </p>
+                    <p>
+                        現代のビジネスにおいて、見込み客が商品やサービスを探すとき、最初に行う行動の大部分がGoogle（やYahoo!）での検索です。つまり、検索結果の上位に自社のWebサイトが表示されないということは、毎日何百・何千というビジネスチャンスが、文字通り「見えないところで消えている」状態と言えます。SEO（検索エンジン最適化）とは、こうした機会損失をなくし、必要としているお客様に自然に出会うための取り組みです。
+                    </p>
+
+                    <h2>最初に取り組むべき「テクニカルSEO」の土台</h2>
+                    <p>
+                        SEOには大きく分けて、技術的な土台を整える「テクニカルSEO」と、コンテンツの質を高める「コンテンツSEO」の2種類があります。まず絶対に押さえなければならないのが、テクニカルSEOです。どれだけ良いコンテンツを書いても、Googleのロボット（クローラー）がページを正しく読み込めない状態では、検索結果に反映されません。
+                    </p>
+                    <p>
+                        具体的には、以下の基本項目から着手しましょう。<br>
+                        ・<strong>SSL化（https化）</strong>：URLが「http://」のままのサイトは、Googleから「安全でないサイト」と判断され、評価が著しく下がります。まだ対応していない場合は最優先で対処が必要です。<br>
+                        ・<strong>スマートフォン対応（レスポンシブデザイン）</strong>：Googleは現在「モバイルファーストインデックス」という方針を採用しており、スマホでの表示品質を評価の主軸としています。PCでは綺麗でも、スマホで崩れているサイトは大きく不利です。<br>
+                        ・<strong>ページの読み込み速度</strong>：表示に3秒以上かかるページは、多くのユーザーが離脱してしまいます。不必要に大きな画像ファイルを圧縮するだけでも、速度は大きく改善されます。
+                    </p>
+
+                    <h2>検索キーワードの「選び方」がSEOの核心</h2>
+                    <p>
+                        テクニカルな土台が整ったら、次はコンテンツSEOです。ここで最も重要かつ難しいのが、「どのキーワードで上位を狙うか」という戦略的な選択です。
+                    </p>
+                    <p>
+                        例えば、大阪市内で税理士事務所を営んでいる場合を考えてみましょう。「税理士」という単語だけで上位に表示されることは、大手サイトや全国チェーンが競合となるため、現実的にほぼ不可能です。しかし「大阪 北区 法人税申告 税理士」「創業間もない会社 節税対策 大阪」のように、地域名や業種・悩みを組み合わせた「ロングテールキーワード」に絞ると、検索ボリュームは小さくなる一方で、競合が格段に少なくなり、上位表示を狙えるようになります。
+                    </p>
+                    <p>
+                        さらに重要なのは、検索する人の「インテント（意図）」を読むことです。同じ「税理士 大阪」でも、「とにかく費用を知りたい人」と「今すぐ契約したい人」では、求める情報がまったく異なります。どのフェーズのお客様に向けて書くのかを明確にした上で、ページの内容を設計することが、SEOで成果を出す上での本質的なアプローチです。合同会社mofuでは、こうしたキーワード戦略の立案から、実際のページ作成・改善まで、一貫してサポートいたします。
+                    </p>
+                </div>
+
+                <div class="article-nav">
+                    <a href="/blog/article-9.html" class="btn btn-outline" style="padding: 10px 24px;">&larr; 前の記事</a>
+                    <a href="/blog/index.html" class="btn btn-outline" style="padding: 10px 24px;">一覧へ戻る</a>
+                    <a href="/blog/article-2.html" class="btn btn-primary" style="padding: 10px 24px;">次の記事 &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

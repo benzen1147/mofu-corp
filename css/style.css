@@ -584,7 +584,7 @@ p:last-child {
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
 }
 
@@ -613,6 +613,12 @@ p:last-child {
   border-top: 1px solid var(--color-border);
   color: var(--color-text-muted);
   font-size: 0.875rem;
+}
+
+/* Pricing Arrow Pulse */
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.88); }
+  50%       { opacity: 1;    transform: scale(1.08); }
 }
 
 /* Animations */
@@ -768,6 +774,33 @@ p:last-child {
     gap: var(--space-lg);
   }
 
+  /* Pricing Slider Arrows */
+  .pricing-slider-dots {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pricing-slider-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    user-select: none;
+    animation: arrowPulse 2.8s ease-in-out infinite;
+    line-height: 1;
+  }
+
+  .pricing-slider-arrow-right {
+    animation-delay: 1.4s;
+  }
+
   /* Pricing Slider */
   .pricing-grid {
     display: flex;
@@ -775,8 +808,8 @@ p:last-child {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding: 4px 4px 16px;
+    gap: 10px;
+    padding: 4px 20px 16px;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
@@ -786,7 +819,7 @@ p:last-child {
   }
 
   .pricing-grid .pricing-card {
-    min-width: 85vw;
+    min-width: calc(100vw - 170px);
     scroll-snap-align: center;
     flex-shrink: 0;
   }

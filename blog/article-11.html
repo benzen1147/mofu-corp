@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>WordPressとノーコードツール、Webサイトはどちらで作るべきか | 合同会社mofu</title>
+    <meta name="description" content="Webサイト制作の選択肢として必ず挙がるWordPressとノーコードツール。それぞれのメリット・デメリットと、企業規模や目的別の選び方を解説します。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .article-header {
+            background-color: var(--color-primary-light);
+            padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-md);
+        }
+
+        section.section {
+            padding-top: var(--space-md);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: var(--space-md);
+            justify-content: center;
+        }
+
+        .article-date {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .article-category {
+            background-color: var(--color-primary-dark);
+            color: var(--color-bg-white);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 2.25rem;
+            color: var(--color-text-main);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: var(--space-md) auto 0;
+            background-color: var(--color-bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .article-body h2 {
+            font-size: 1.75rem;
+            color: var(--color-primary-dark);
+            margin: var(--space-lg) 0 var(--space-md);
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--color-primary-light);
+            letter-spacing: 0.02em;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 1.35rem;
+            margin: var(--space-md) 0 var(--space-sm);
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+
+        .article-body p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            margin-bottom: var(--space-md);
+            color: var(--color-text-main);
+        }
+
+        .article-body img {
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+            width: 100%;
+        }
+
+        .article-nav {
+            max-width: 760px;
+            margin: var(--space-xl) auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.5rem;
+            }
+
+            .article-body {
+                padding: var(--space-lg) var(--space-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <common-header></common-header>
+
+    <main>
+        <div class="article-header fade-in">
+            <div class="container">
+                <div class="article-meta">
+                    <span class="article-date">2026.02.17</span>
+                    <span class="article-category">Web制作</span>
+                </div>
+                <h1 class="article-title">WordPressとノーコードツール、<br>Webサイトはどちらで作るべきか</h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container fade-in">
+                <div class="article-body">
+                    <h2>Webサイト制作の選択肢は大きく2種類</h2>
+                    <p>
+                        Webサイトを新しく作る、あるいはリニューアルする際に必ず直面するのが、「どのプラットフォームで作るか」という選択です。現在、中小企業が最もよく候補として挙げるのが、世界シェアNo.1のCMS（コンテンツ管理システム）である「WordPress」と、コーディング不要でサイトを構築できる「ノーコードツール（Wix、STUDIOなど）」の2択です。
+                    </p>
+                    <p>
+                        どちらが優れているという絶対的な答えはなく、自社の目的・規模・更新頻度・予算によって最適な選択肢は異なります。この記事では、それぞれの特性を正直にお伝えし、どのケースにどちらが向いているかをわかりやすく整理します。
+                    </p>
+
+                    <h2>WordPressの強みと注意点</h2>
+                    <p>
+                        WordPressは全世界のWebサイトの約40%以上に使われている、圧倒的なシェアを誇るCMSです。その最大の強みは「カスタマイズの自由度の高さ」と「SEOへの適性」です。プラグイン（追加機能）が豊富なため、ECサイト、予約システム、会員制サイトなど、複雑な機能を比較的低コストで実装できます。また、ブログ記事の更新・管理が簡単で、SEOに必要な設定をきめ細かく調整できるため、コンテンツマーケティングを本格的に行いたい場合は特に向いています。
+                    </p>
+                    <p>
+                        一方で、注意すべき点もあります。WordPress本体やプラグインの定期的なアップデートが必要で、怠るとセキュリティの脆弱性が生まれやすくなります。また、初期設定には専門知識が必要なため、制作会社に依頼する場合でも、依頼後の保守・運用体制をどうするかを最初から考えておく必要があります。
+                    </p>
+
+                    <h2>ノーコードツールが向いているケース</h2>
+                    <p>
+                        「STUDIO」「Wix」「Jimdo」などのノーコードツールは、デザインのテンプレートを選んでドラッグ&ドロップでサイトを組み上げられるため、制作スピードが早く、コストを抑えやすいのが特徴です。サーバーの管理やセキュリティアップデートの手間が少なく、ITに詳しくない担当者でも更新・管理がしやすい点も大きな魅力です。
+                    </p>
+                    <p>
+                        特に、設立間もないスタートアップや小規模事業者が「まず早くWebサイトを公開したい」「予算をできるだけ抑えたい」という場合に有力な選択肢となります。ただし、複雑なカスタマイズには限界があること、将来的にWordPressへ移行する際にコンテンツ移行のコストがかかることも考慮が必要です。
+                    </p>
+
+                    <h3>合同会社mofuはどちらも対応しています</h3>
+                    <p>
+                        結論として、「ブログを頻繁に更新してSEO集客したい」「会員機能や複雑なカスタマイズが必要」ならWordPress、「まず低コストで素早く公開したい」「シンプルな情報発信サイトでよい」ならノーコードツール、という目安で考えると判断しやすいでしょう。合同会社mofuでは、目的・予算・運用体制をヒアリングした上で、最適な選択肢を一緒にご検討いたします。
+                    </p>
+                </div>
+
+                <div class="article-nav">
+                    <a href="/blog/article-12.html" class="btn btn-outline" style="padding: 10px 24px;">&larr; 前の記事</a>
+                    <a href="/blog/index.html" class="btn btn-outline" style="padding: 10px 24px;">一覧へ戻る</a>
+                    <a href="/blog/article-10.html" class="btn btn-primary" style="padding: 10px 24px;">次の記事 &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <common-footer></common-footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

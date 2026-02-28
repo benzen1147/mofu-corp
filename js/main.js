@@ -76,9 +76,6 @@ class CommonFooter extends HTMLElement {
               <p>大阪府池田市神田1-1-12-A</p>
               <p>Tel: 070-8977-8452</p>
               <p>Email: info@mofu-llc.co.jp</p>
-              <div style="margin-top: 16px;">
-                <span class="badge-ai">AI活用支援対応</span>
-              </div>
             </div>
             
             <div class="footer-links">
@@ -97,6 +94,12 @@ class CommonFooter extends HTMLElement {
                   <li><a href="/business.html">マーケティング</a></li>
                   <li><a href="/business.html">システム開発</a></li>
                   <li><a href="/business.html">AI活用支援</a></li>
+                </ul>
+              </div>
+              <div class="footer-links-col">
+                <h4>料金プラン</h4>
+                <ul>
+                  <li><a href="/pricing.html">料金プラン一覧</a></li>
                 </ul>
               </div>
               <div class="footer-links-col">
@@ -127,24 +130,8 @@ function initPricingSliders() {
     const cards = Array.from(grid.querySelectorAll('.pricing-card'));
     if (cards.length < 2) return;
 
-    // ドットインジケーターを生成
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'pricing-slider-dots';
-    cards.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.className = 'dot' + (i === 1 ? ' active' : '');
-      dotsContainer.appendChild(dot);
-    });
-    grid.after(dotsContainer);
-
-    // スタンダードプラン（2枚目）を初期表示
-    requestAnimationFrame(() => {
-      const featured = cards[1];
-      grid.scrollLeft = featured.offsetLeft - (grid.offsetWidth - featured.offsetWidth) / 2;
-    });
-
-    // スクロール時にドットを更新
-    grid.addEventListener('scroll', () => {
+    // 現在のアクティブインデックスを返す
+    function getActiveIndex() {
       const centerX = grid.scrollLeft + grid.offsetWidth / 2;
       let activeIndex = 0;
       let minDist = Infinity;
@@ -152,9 +139,71 @@ function initPricingSliders() {
         const dist = Math.abs((card.offsetLeft + card.offsetWidth / 2) - centerX);
         if (dist < minDist) { minDist = dist; activeIndex = i; }
       });
-      dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+      return activeIndex;
+    }
+
+    // 指定インデックスのカードへスクロール
+    function scrollToCard(index) {
+      const card = cards[index];
+      grid.scrollTo({
+        left: card.offsetLeft - (grid.offsetWidth - card.offsetWidth) / 2,
+        behavior: 'smooth'
+      });
+    }
+
+    // ドットコンテナを生成
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'pricing-slider-dots';
+
+    // 左矢印
+    const leftArrow = document.createElement('div');
+    leftArrow.className = 'pricing-slider-arrow pricing-slider-arrow-left';
+    leftArrow.innerHTML = '&#8249;';
+    leftArrow.addEventListener('click', () => {
+      const i = getActiveIndex();
+      if (i > 0) scrollToCard(i - 1);
+    });
+    dotsContainer.appendChild(leftArrow);
+
+    // ドット
+    cards.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i === 1 ? ' active' : '');
+      dotsContainer.appendChild(dot);
+    });
+
+    // 右矢印
+    const rightArrow = document.createElement('div');
+    rightArrow.className = 'pricing-slider-arrow pricing-slider-arrow-right';
+    rightArrow.innerHTML = '&#8250;';
+    rightArrow.addEventListener('click', () => {
+      const i = getActiveIndex();
+      if (i < cards.length - 1) scrollToCard(i + 1);
+    });
+    dotsContainer.appendChild(rightArrow);
+
+    grid.after(dotsContainer);
+
+    // 矢印の表示・非表示を更新
+    function updateArrows(activeIndex) {
+      leftArrow.style.visibility  = activeIndex === 0                  ? 'hidden' : 'visible';
+      rightArrow.style.visibility = activeIndex === cards.length - 1   ? 'hidden' : 'visible';
+    }
+
+    // スタンダードプラン（2枚目）を初期表示
+    requestAnimationFrame(() => {
+      scrollToCard(1);
+      updateArrows(1);
+    });
+
+    // スクロール時にドット・矢印を更新
+    const dots = dotsContainer.querySelectorAll('.dot');
+    grid.addEventListener('scroll', () => {
+      const activeIndex = getActiveIndex();
+      dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === activeIndex);
       });
+      updateArrows(activeIndex);
     }, { passive: true });
   });
 }
